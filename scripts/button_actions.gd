@@ -1,5 +1,9 @@
 extends Node
 
+# This class handles associating buttons with actions.
+# Actions can be added to a button and a button can be queried for all
+# associated actions.
+
 # The different buttons that can be bound to actions.
 enum Button {
 	UP,
@@ -33,8 +37,9 @@ func _ready():
 
 # Clear all actions associated with buttons.
 func clear_actions():
-	for i in range(Button.LENGTH):
-		actions[i] = []
+	actions.clear()
+	for _i in range(Button.SIZE):
+		actions.push_back(Array())
 
 # Add an action to a button.
 func add_action(var button : int, var action : int):
