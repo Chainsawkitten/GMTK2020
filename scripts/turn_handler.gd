@@ -47,7 +47,7 @@ func _process(_delta):
 		else:
 			# Perform a turn.
 			perform_normal_input(input)
-			execute_world_objects()
+			WorldObjects.update_world_objects()
 			reread_button_actions()
 			GlobalGridMap.save_state()
 
@@ -117,11 +117,6 @@ func perform_normal_input(var input : int):
 			button = ButtonActions.Button.Y
 	
 	ButtonActions.press_button(button)
-
-# Execute world elements that do something every turn.
-func execute_world_objects():
-	# TODO
-	pass
 
 # Reread all button actions based on text in the world.
 func reread_button_actions():

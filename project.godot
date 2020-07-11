@@ -37,6 +37,7 @@ GlobalGridMap="*res://scripts/grid_map.gd"
 TurnHandler="*res://scripts/turn_handler.gd"
 Global="*res://scripts/global.gd"
 LevelHandler="*res://scripts/level_handler.gd"
+WorldObjects="*res://scripts/world_objects.gd"
 
 [display]
 
