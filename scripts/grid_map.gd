@@ -66,12 +66,11 @@ func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var directio
 		return true
 	var must_push = false
 	for object in cell:
-		if object is GameObject:
-			if object.is_barrier:
-				if object.is_pushable:
-					must_push = true
-				else:
-					return false
+		if object.is_barrier:
+			if object.is_pushable:
+				must_push = true
+			else:
+				return false
 	if must_push:
 		return can_push(to_x, to_y, direction_x, direction_y)
 	return true
@@ -84,12 +83,11 @@ func can_push(var from_x:int, var from_y:int, var direction_x:int, var direction
 		return true
 	var must_push = false
 	for object in cell:
-		if object is GameObject:
-			if object.is_barrier:
-				if object.is_pushable:
-					must_push = true
-				else:
-					return false
+		if object.is_barrier:
+			if object.is_pushable:
+				must_push = true
+			else:
+				return false
 	if must_push:
 		# check that the objects can move to the next cell in direction 
 		var to_x = from_x + direction_x
@@ -98,9 +96,37 @@ func can_push(var from_x:int, var from_y:int, var direction_x:int, var direction
 		return can_move_into(to_x, to_y, direction_x, direction_y)
 	return true
 
-func push(var _from_x:int, var _from_y:int, var _direction_x:int, var _direction_y:int):
-	# TODO
-	pass
+# Precondition: can_push(from_x, from_y, direction_x, direction_y)
+# Assumtion: there are no objects that are not is_barrier but are is_pushable
+func push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:int):
+	assert(can_push(from_x, from_y, direction_x, direction_y))
+	if outside_grid(from_x, from_y):
+		return
+	var cell = get_objects(from_x, from_y)
+	if cell.empty():
+		return
+
+	var any_pushable = false
+	for object in cell:
+		# Implicit from precondition can_push
+		assert(not object.is_barrier || object.is_pushable)
+		# Assumtion
+		assert(!(not object.is_barrier && object.is_pushable))
+		if object.is_pushable:
+			any_pushable = true
+			break
+
+	if any_pushable:
+		var to_x = from_x + direction_x
+		var to_y = from_y + direction_y
+		push(to_x, to_y, direction_x, direction_y)
+		for object in cell:
+			if object.is_pushable:
+				move_object(from_x, from_y, to_x, to_y, object)
+				
+
+
+
 
 
 func save_state():

@@ -127,6 +127,7 @@ func move(var x : int, var y : int):
 		# TODO Change directions (player sprite).
 		
 		if GlobalGridMap.can_move_into(player.grid_x + x, player.grid_y + y, x, y):
+			GlobalGridMap.push(player.grid_x + x, player.grid_y + y, x, y)
 			GlobalGridMap.move_object(player.grid_x, player.grid_y, player.grid_x + x, player.grid_y + y, player)
 
 # Die
