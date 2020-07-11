@@ -4,7 +4,8 @@ extends Node
 enum GameObjectType {
 	TEXT,
 	WALL,
-	PLAYER
+	PLAYER,
+	CAT
 }
 
 # The types of text there are.
