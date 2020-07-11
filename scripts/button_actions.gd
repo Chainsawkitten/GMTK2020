@@ -43,6 +43,11 @@ func clear_actions():
 
 # Add an action to a button.
 func add_action(var button : int, var action : int):
+	# Don't add the action if it already exists.
+	for a in actions[button]:
+		if a == action:
+			return
+	
 	actions[button].push_back(action)
 
 # Get all actions associated with a button.
