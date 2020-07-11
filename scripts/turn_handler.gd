@@ -35,16 +35,18 @@ func _process(_delta):
 			# TODO
 			pass
 		elif (input == Press.UNDO):
-			# TODO
-			pass
+			GridMap.undo()
+			reread_button_actions()
 		elif (input == Press.REDO):
-			# TODO
-			pass
+			GridMap.redo()
+			reread_button_actions()
 		else:
 			# Perform a turn.
 			perform_normal_input(input)
 			execute_world_objects()
 			reread_button_actions()
+			GridMap.save_state()
+
 
 # Get player input.
 func get_player_input() -> int:

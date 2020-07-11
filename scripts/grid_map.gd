@@ -6,6 +6,9 @@ var grid_width = 30
 
 var grid: Array
 
+var grid_undo_frames: Array
+var undo_frame_index: int = -1
+
 enum Direction {
 	UP, LEFT, DOWN, RIGHT
 	UP_LEFT, DOWN_LEFT, DOWN_RIGHT, UP_RIGHT
@@ -22,6 +25,9 @@ func _init():
 	grid.resize(grid_height * grid_width)
 	for k in range(grid.size()):
 		grid[k] = Array()
+
+func _ready():
+	call_deferred("save_state")
 
 func outside_grid(var x:int, var y:int):
 	return x < 0 || x >= grid_width || y < 0 || y >= grid_height
@@ -98,5 +104,50 @@ func can_push(var from_x:int, var from_y:int, var direction:int):
 	return true
 
 func push(var _from_x:int, var _from_y:int, var _direction:int):
+	# TODO
+	pass
+
+
+func save_state():
+	# var undo_frame = Array()
+	# undo_frame.resize(grid.size())
+	# for k in range(grid.size())
+	# 	undo_frame[k] = grid[k].duplicate()
+	var undo_frame = grid.duplicate(true)
+
+	# remove all undo frames after the current
+	while undo_frame_index + 1 < grid_undo_frames.size():
+		grid_undo_frames.pop_back()
+	# append new unto frame
+	grid_undo_frames.push_back(undo_frame)
+	# update undo frame index
+	undo_frame_index = grid_undo_frames.size() - 1;
+
+
+func undo():
+	if undo_frame_index <= 0:
+		# At oldest state, cannot undo more
+		return false
+	# Go back to previous state and restore
+	undo_frame_index = undo_frame_index - 1
+	restore_state()
+	return true
+
+func redo():
+	var last_frame_index = grid_undo_frames.size() - 1
+	if undo_frame_index >= last_frame_index:
+		# At newest state, cannot redo more
+		return false
+	# Go to next frame and restore
+	undo_frame_index = undo_frame_index + 1
+	restore_state()
+	return true
+
+func restore_state():
+	# TODO restore state
+	# TODO diff grid against current undo frame
+	# Find what objects are moved, added, and removed
+	# grid = grid_undo_frames[undo_frame_index].duplicate(true)
+	# notify all moved, added, and removed objects about their new status
 	pass
 
