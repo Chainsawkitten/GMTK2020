@@ -8,9 +8,20 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "Node",
+"class": "GameObject",
+"language": "GDScript",
+"path": "res://scripts/game_object.gd"
+}, {
+"base": "GameObject",
+"class": "Text",
+"language": "GDScript",
+"path": "res://scripts/text.gd"
+} ]
 _global_script_class_icons={
-
+"GameObject": "",
+"Text": ""
 }
 
 [application]
