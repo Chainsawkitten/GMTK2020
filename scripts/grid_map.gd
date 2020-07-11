@@ -33,6 +33,24 @@ func add(object, var x:int, var y:int):
 func get_objects(var x:int, var y:int):
 	return grid[grid_width * y + x]
 
+# type: GameObjectType
+func get_objects_by_type(type: int):
+	var objects = []
+	for cell in grid:
+		for object in cell:
+			if type == Global.GameObjectType.TEXT && object is Text:
+				objects.push_back(object)
+	return objects
+
+# text_type: TextType
+func get_text_by_type(text_type: int):
+	var objects = []
+	for cell in grid:
+		for object in cell:
+			if object is Text && object.text_type == text_type:
+				objects.push_back(object)
+	return objects
+
 func move_object(var from_x:int, var from_y:int, var to_x:int, var to_y:int, var object):
 	grid[grid_width * from_y + from_x].erase(object)
 	grid[grid_width * to_y + to_x].push_back(object)
