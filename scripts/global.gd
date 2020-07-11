@@ -25,3 +25,5 @@ enum TextType {
 	MOVE_RIGHT,
 	MOVE_DOWN
 }
+
+const cell_size : int = 32

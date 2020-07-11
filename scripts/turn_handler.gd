@@ -35,12 +35,12 @@ func _process(_delta):
 			# TODO
 			pass
 		elif (input == Press.UNDO):
-			if GridMap.undo():
+			if GlobalGridMap.undo():
 				reread_button_actions()
 			else:
 				pass # TODO undo returns false when cannot undo more
 		elif (input == Press.REDO):
-			if GridMap.redo():
+			if GlobalGridMap.redo():
 				reread_button_actions()
 			else:
 				pass # TODO redo returns false when cannot redo more
@@ -49,7 +49,7 @@ func _process(_delta):
 			perform_normal_input(input)
 			execute_world_objects()
 			reread_button_actions()
-			GridMap.save_state()
+			GlobalGridMap.save_state()
 
 
 # Get player input.

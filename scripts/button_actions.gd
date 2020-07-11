@@ -118,8 +118,12 @@ func press_button(var button : int):
 
 # Move
 func move(var x : int, var y : int):
-	# TODO
-	print("move")
+	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
+		# TODO Change directions (player sprite).
+		
+		if GlobalGridMap.can_move_into(player.grid_x + x, player.grid_y + y, x, y):
+			GlobalGridMap.move_object(player.grid_x, player.grid_y, player.grid_x + x, player.grid_y + y, player)
+			player.move_linear(Vector2(player.grid_x * Global.cell_size, player.grid_y * Global.cell_size))
 
 # Die
 func die():

@@ -9,17 +9,6 @@ var grid: Array
 var grid_undo_frames: Array
 var undo_frame_index: int = -1
 
-enum Direction {
-	UP, LEFT, DOWN, RIGHT
-	UP_LEFT, DOWN_LEFT, DOWN_RIGHT, UP_RIGHT
-}
-
-const dir_offsets = [
-	[0, -1], [-1, 0], [0, 1], [1, 0], 
-	[-1, -1], [-1, 1], [1, 1], [1, -1], 
-]
-
-
 # Called when the node is created
 func _init():
 	grid.resize(grid_height * grid_width)
@@ -62,8 +51,10 @@ func get_text_by_type(text_type: int):
 func move_object(var from_x:int, var from_y:int, var to_x:int, var to_y:int, var object):
 	grid[grid_width * from_y + from_x].erase(object)
 	grid[grid_width * to_y + to_x].push_back(object)
+	object.grid_x = to_x
+	object.grid_y = to_y
 
-func can_move_into(var to_x:int, var to_y:int, var direction:int):
+func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(to_x, to_y):
 		return false
 	var cell = get_objects(to_x, to_y)
@@ -78,10 +69,10 @@ func can_move_into(var to_x:int, var to_y:int, var direction:int):
 				else:
 					return false
 	if must_push:
-		return can_push(to_x, to_y, direction)
+		return can_push(to_x, to_y, direction_x, direction_y)
 	return true
 
-func can_push(var from_x:int, var from_y:int, var direction:int):
+func can_push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(from_x, from_y):
 		return false
 	var cell = get_objects(from_x, from_y)
@@ -97,13 +88,13 @@ func can_push(var from_x:int, var from_y:int, var direction:int):
 					return false
 	if must_push:
 		# check that the objects can move to the next cell in direction 
-		var to_x = from_x + dir_offsets[direction][0]
-		var to_y = from_y + dir_offsets[direction][1]
+		var to_x = from_x + direction_x
+		var to_y = from_y + direction_y
 		# Mutual recursion!! =D
-		return can_move_into(to_x, to_y, direction)
+		return can_move_into(to_x, to_y, direction_x, direction_y)
 	return true
 
-func push(var _from_x:int, var _from_y:int, var _direction:int):
+func push(var _from_x:int, var _from_y:int, var _direction_x:int, var _direction_y:int):
 	# TODO
 	pass
 
