@@ -35,3 +35,19 @@ func _process(delta):
 # Move linarly to a given position (visual respresentation only).
 func move_linear(var target : Vector2):
 	target_position = target
+
+# Set grid position, when moved, pushed, or either undo or redo of the same
+func move(var x:int, var y:int):
+	grid_x = x
+	grid_y = y
+	move_linear(Vector2(grid_x * Global.cell_size, grid_y * Global.cell_size))
+
+# When the object is created or undo destruction
+func appear():
+	pass # TODO
+
+# When the object is destroyed or undo creation
+func disappear():
+	pass # TODO
+
+

@@ -123,7 +123,6 @@ func move(var x : int, var y : int):
 		
 		if GlobalGridMap.can_move_into(player.grid_x + x, player.grid_y + y, x, y):
 			GlobalGridMap.move_object(player.grid_x, player.grid_y, player.grid_x + x, player.grid_y + y, player)
-			player.move_linear(Vector2(player.grid_x * Global.cell_size, player.grid_y * Global.cell_size))
 
 # Die
 func die():

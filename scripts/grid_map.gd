@@ -51,8 +51,7 @@ func get_text_by_type(text_type: int):
 func move_object(var from_x:int, var from_y:int, var to_x:int, var to_y:int, var object):
 	grid[grid_width * from_y + from_x].erase(object)
 	grid[grid_width * to_y + to_x].push_back(object)
-	object.grid_x = to_x
-	object.grid_y = to_y
+	object.move(to_x, to_y)
 
 func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(to_x, to_y):
@@ -135,10 +134,49 @@ func redo():
 	return true
 
 func restore_state():
-	# TODO restore state
-	# TODO diff grid against current undo frame
+	# Get undo frame to restore
+	var undo_frame = grid_undo_frames[undo_frame_index]
+	# diff undo frame against grid
+	var diff_add = []
+	var diff_remove = []
+	for k in range(grid.size()):
+		for object in grid[k]:
+			if not undo_frame[k].has(object):
+				diff_remove.push_back(object);
+		for object in undo_frame[k]:
+			if not grid[k].has(object):
+				diff_add.push_back(object);
+
 	# Find what objects are moved, added, and removed
-	# grid = grid_undo_frames[undo_frame_index].duplicate(true)
+	var moved = []
+	var added = []
+	for object in diff_add:
+		if diff_remove.has(object):
+			moved.push_back(object)
+		else:
+			added.push_back(object)
+
+	var removed = []
+	for object in diff_remove:
+		if not diff_add.has(object):
+			removed.push_back(object)
+
+	# restore grid to old state
+	grid = undo_frame.duplicate(true)
+
 	# notify all moved, added, and removed objects about their new status
-	pass
+	for k in range(grid.size()):
+		# k = grid_width * y + x
+		var x = k % grid_width
+		var y = k / grid_width
+
+		for object in grid[k]:
+			if moved.has(object):
+				object.move(x, y)
+			elif added.has(object):
+				object.move(x, y)
+				object.appear()
+			elif removed.has(object):
+				object.move(x, y)
+				object.disappear()
 
