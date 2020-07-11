@@ -121,4 +121,50 @@ func execute_world_objects():
 func reread_button_actions():
 	ButtonActions.clear_actions()
 	
-	# TODO Loop through all text and get actions.
+	# Loop through all text and get actions.
+	var is_texts = []
+	# TODO Get all is texts in the map.
+	
+	for i in is_texts:
+		read_text(i, 0, 1)
+		read_text(i, 1, 0)
+
+# Read a text in a given direction.
+# TODO Handle NOT
+func read_text(var is_text, var x : int, var y : int):
+	var buttons = []
+	var actions = []
+	
+	# TODO Get the is' position.
+	var is_x : int = 0
+	var is_y : int = 0
+	
+	# Get buttons before the is.
+	var before_x : int = is_x - x
+	var before_y : int = is_y - y
+	var objects = GridMap.get_objects(before_x, before_y)
+	for o in objects:
+		# TODO Check if object is text.
+		if (false):
+			# TODO Check if object is a button.
+			if false:
+				# TODO Get which kind of button and add it to buttons.
+				pass
+	
+	# Get actions after the is.
+	var after_x : int = is_x + x
+	var after_y : int = is_y + y
+	objects = GridMap.get_objects(after_x, after_y)
+	for o in objects:
+		# TODO Check if object is text.
+		if (false):
+			# TODO Check if object is action.
+			if false:
+				# TODO Get which kind of action and add it to actions.
+				pass
+	
+	# Map buttons to actions.
+	for b in buttons:
+		for a in actions:
+			ButtonActions.add_action(b, a)
+	
