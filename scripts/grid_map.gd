@@ -40,7 +40,7 @@ func get_objects_by_type(type: int):
 	var objects = []
 	for cell in grid:
 		for object in cell:
-			if type == Global.GameObjectType.TEXT && object is Text:
+			if type == object.game_object_type:
 				objects.push_back(object)
 	return objects
 
