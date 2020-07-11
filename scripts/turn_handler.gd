@@ -35,11 +35,15 @@ func _process(_delta):
 			# TODO
 			pass
 		elif (input == Press.UNDO):
-			GridMap.undo()
-			reread_button_actions()
+			if GridMap.undo():
+				reread_button_actions()
+			else:
+				pass # TODO undo returns false when cannot undo more
 		elif (input == Press.REDO):
-			GridMap.redo()
-			reread_button_actions()
+			if GridMap.redo():
+				reread_button_actions()
+			else:
+				pass # TODO redo returns false when cannot redo more
 		else:
 			# Perform a turn.
 			perform_normal_input(input)
