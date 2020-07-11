@@ -16,7 +16,12 @@ _global_script_class_icons={
 [application]
 
 config/name="GMTK2020"
+run/main_scene="res://scenes/game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+ButtonActions="*res://scripts/button_actions.gd"
 
 [rendering]
 
