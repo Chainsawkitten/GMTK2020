@@ -32,6 +32,7 @@ func create_overworld_levels():
 	var overworld = LevelDescription.new()
 	overworld.name = "overworld"
 	
+	create_leaf_level(overworld, "level0")
 	create_leaf_level(overworld, "test_level")
 	
 	return overworld
