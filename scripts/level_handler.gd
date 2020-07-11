@@ -70,9 +70,13 @@ func return_to_parent():
 # Play a level.
 func play_level(var level : LevelDescription):
 	# Clear current level.
-	get_node("/Level").queue_free()
+	var game_node = get_node("/root/Game")
+	game_node.get_node("Level").queue_free()
+	ButtonActions.clear_actions()
+	GlobalGridMap.clear_grid()
 	
 	current_level = level
 	
-	# TODO Load level.
-	
+	# Load new level.
+	var new_level = load("scenes/levels/" + level.name + ".tscn").instance()
+	game_node.add_child(new_level)

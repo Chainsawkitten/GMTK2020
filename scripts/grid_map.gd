@@ -12,8 +12,7 @@ var undo_frame_index: int = -1
 # Called when the node is created
 func _init():
 	grid.resize(grid_height * grid_width)
-	for k in range(grid.size()):
-		grid[k] = Array()
+	clear_grid()
 
 func _ready():
 	call_deferred("save_state")
@@ -23,6 +22,12 @@ func outside_grid(var x:int, var y:int):
 
 func add(object, var x:int, var y:int):
 	grid[grid_width * y + x].push_back(object)
+
+func clear_grid():
+	for k in range(grid.size()):
+		grid[k] = Array()
+	grid_undo_frames.clear()
+	undo_frame_index = -1
 
 func get_objects(var x:int, var y:int):
 	if outside_grid(x, y):
