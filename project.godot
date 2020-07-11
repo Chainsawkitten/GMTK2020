@@ -35,6 +35,7 @@ config/icon="res://icon.png"
 ButtonActions="*res://scripts/button_actions.gd"
 GlobalGridMap="*res://scripts/grid_map.gd"
 TurnHandler="*res://scripts/turn_handler.gd"
+Global="*res://scripts/global.gd"
 
 [display]
 
