@@ -23,6 +23,9 @@ func outside_grid(var x:int, var y:int):
 func add(object, var x:int, var y:int):
 	grid[grid_width * y + x].push_back(object)
 
+func remove(object):
+	grid[grid_width * object.grid_y + object.grid_x].erase(object)
+
 func clear_grid():
 	for k in range(grid.size()):
 		grid[k] = Array()
