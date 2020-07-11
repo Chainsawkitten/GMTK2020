@@ -1,11 +1,17 @@
-extends Node
+extends Node2D
 class_name GameObject
 
 export var is_pushable: bool = true
 export var is_barrier: bool = true
 
-#func _init():
-#	pass
+var grid_x : int
+var grid_y : int
+
+func _ready():
+	grid_x = int(global_position.x) / 32
+	grid_y = int(global_position.y) / 32
+	
+	GlobalGridMap.add(self, grid_x, grid_y)
 
 #func _ready():
 #	pass

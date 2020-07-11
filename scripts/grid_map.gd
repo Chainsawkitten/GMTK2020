@@ -23,14 +23,16 @@ func _init():
 	for k in range(grid.size()):
 		grid[k] = Array()
 
-
 func outside_grid(var x:int, var y:int):
-	return x < 0 || x > grid_width || y < 0 || y > grid_height
+	return x < 0 || x >= grid_width || y < 0 || y >= grid_height
 
 func add(object, var x:int, var y:int):
 	grid[grid_width * y + x].push_back(object)
 
 func get_objects(var x:int, var y:int):
+	if outside_grid(x, y):
+		return []
+	
 	return grid[grid_width * y + x]
 
 # type: GameObjectType

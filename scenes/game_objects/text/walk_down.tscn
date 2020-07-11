@@ -5,6 +5,7 @@
 
 [node name="WalkDown" type="Node2D"]
 script = ExtResource( 1 )
+text_type = 13
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

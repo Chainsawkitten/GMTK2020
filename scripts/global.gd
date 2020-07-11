@@ -16,5 +16,9 @@ enum TextType {
 	BUTTON_X,
 	BUTTON_Y,
 	IS,
-	DIE
+	DIE,
+	MOVE_UP,
+	MOVE_LEFT,
+	MOVE_RIGHT,
+	MOVE_DOWN
 }

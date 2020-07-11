@@ -54,6 +54,44 @@ func add_action(var button : int, var action : int):
 func get_actions(var button : int):
 	return actions[button]
 
+# Get button from text type.
+func text_type_to_button(var text_type : int) -> int:
+	match text_type:
+		Global.TextType.BUTTON_UP:
+			return Button.UP
+		Global.TextType.BUTTON_LEFT:
+			return Button.LEFT
+		Global.TextType.BUTTON_RIGHT:
+			return Button.RIGHT
+		Global.TextType.BUTTON_DOWN:
+			return Button.DOWN
+		Global.TextType.BUTTON_A:
+			return Button.A
+		Global.TextType.BUTTON_B:
+			return Button.B
+		Global.TextType.BUTTON_X:
+			return Button.X
+		Global.TextType.BUTTON_Y:
+			return Button.Y
+	
+	return Button.SIZE
+
+# Get action from text type.
+func text_type_to_action(var text_type : int) -> int:
+	match text_type:
+		Global.TextType.DIE:
+			return Action.DIE
+		Global.TextType.MOVE_UP:
+			return Action.MOVE_UP
+		Global.TextType.MOVE_LEFT:
+			return Action.MOVE_LEFT
+		Global.TextType.MOVE_RIGHT:
+			return Action.MOVE_RIGHT
+		Global.TextType.MOVE_DOWN:
+			return Action.MOVE_DOWN
+	
+	return Action.SIZE
+
 # Press a button and see what happens.
 func press_button(var button : int):
 	# Perform actions in the order of the enum.
@@ -81,14 +119,14 @@ func press_button(var button : int):
 # Move
 func move(var x : int, var y : int):
 	# TODO
-	pass
+	print("move")
 
 # Die
 func die():
 	# TODO
-	pass
+	print("die")
 
 # Win
 func win():
 	# TODO
-	pass
+	print("win")

@@ -9,7 +9,7 @@
 config_version=4
 
 _global_script_classes=[ {
-"base": "Node",
+"base": "Node2D",
 "class": "GameObject",
 "language": "GDScript",
 "path": "res://scripts/game_object.gd"

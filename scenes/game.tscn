@@ -1,8 +1,41 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_objects/text/button_a.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game_objects/text/walk_right.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game_objects/text/button_x.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game_objects/text/die.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_objects/text/walk_down.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game_objects/text/button_b.tscn" type="PackedScene" id=7]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Is" parent="." instance=ExtResource( 1 )]
 position = Vector2( 96, 96 )
+
+[node name="ButtonA" parent="." instance=ExtResource( 2 )]
+position = Vector2( 96, 64 )
+
+[node name="Die" parent="." instance=ExtResource( 5 )]
+position = Vector2( 96, 128 )
+
+[node name="Is2" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 64 )
+
+[node name="WalkDown" parent="." instance=ExtResource( 6 )]
+position = Vector2( 160, 64 )
+
+[node name="ButtonB" parent="." instance=ExtResource( 7 )]
+position = Vector2( 64, 96 )
+
+[node name="WalkRight" parent="." instance=ExtResource( 3 )]
+position = Vector2( 128, 96 )
+
+[node name="Is3" parent="." instance=ExtResource( 1 )]
+position = Vector2( 192, 64 )
+
+[node name="Is4" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 128 )
+
+[node name="ButtonX" parent="." instance=ExtResource( 4 )]
+position = Vector2( 160, 128 )

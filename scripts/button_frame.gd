@@ -8,8 +8,6 @@ func _ready():
 
 # Handle input.
 func _input(event):
-	print("event")
-	
 	if event is InputEventKey:
 		frame = 0
 	
