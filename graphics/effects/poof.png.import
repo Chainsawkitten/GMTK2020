@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/button_right.png-82876a330c9a0b3197f40ed1e33edefc.stex"
+path="res://.import/poof.png-9380eeacc57c1fbaec5214a3854613fd.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://graphics/game_objects/text/button_right.png"
-dest_files=[ "res://.import/button_right.png-82876a330c9a0b3197f40ed1e33edefc.stex" ]
+source_file="res://graphics/effects/poof.png"
+dest_files=[ "res://.import/poof.png-9380eeacc57c1fbaec5214a3854613fd.stex" ]
 
 [params]
 
