@@ -53,3 +53,42 @@ func add_action(var button : int, var action : int):
 # Get all actions associated with a button.
 func get_actions(var button : int):
 	return actions[button]
+
+# Press a button and see what happens.
+func press_button(var button : int):
+	# Perform actions in the order of the enum.
+	for i in range(Action.SIZE):
+		var found = false
+		for action in get_actions(button):
+			if i == action:
+				found = true
+		
+		if found:
+			match i:
+				Action.MOVE_UP:
+					move(0, -1)
+				Action.MOVE_LEFT:
+					move(-1, 0)
+				Action.MOVE_RIGHT:
+					move(1, 0)
+				Action.MOVE_DOWN:
+					move(0, 1)
+				Action.DIE:
+					die()
+				Action.WIN:
+					win()
+
+# Move
+func move(var x : int, var y : int):
+	# TODO
+	pass
+
+# Die
+func die():
+	# TODO
+	pass
+
+# Win
+func win():
+	# TODO
+	pass

@@ -110,7 +110,7 @@ func perform_normal_input(var input : int):
 		Press.BUTTON_Y:
 			button = ButtonActions.Button.Y
 	
-	# TODO Actually perform the actions associated with that button.
+	ButtonActions.press_button(button)
 
 # Execute world elements that do something every turn.
 func execute_world_objects():
