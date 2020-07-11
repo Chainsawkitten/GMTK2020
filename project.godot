@@ -36,6 +36,7 @@ ButtonActions="*res://scripts/button_actions.gd"
 GlobalGridMap="*res://scripts/grid_map.gd"
 TurnHandler="*res://scripts/turn_handler.gd"
 Global="*res://scripts/global.gd"
+LevelHandler="*res://scripts/level_handler.gd"
 
 [display]
 
@@ -118,4 +119,5 @@ button_redo={
 quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
+environment/default_clear_color=Color( 0.0627451, 0.0627451, 0.0627451, 1 )
 environment/default_environment="res://default_env.tres"

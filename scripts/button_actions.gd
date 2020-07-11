@@ -132,5 +132,4 @@ func die():
 
 # Win
 func win():
-	# TODO
-	print("win")
+	LevelHandler.win()
