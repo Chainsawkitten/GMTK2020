@@ -1,6 +1,9 @@
 extends Node2D
 class_name GameObject
 
+# Global.GameObjectType
+export var game_object_type : int = 0
+
 export var is_pushable: bool = true
 export var is_barrier: bool = true
 

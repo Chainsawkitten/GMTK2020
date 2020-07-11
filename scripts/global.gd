@@ -2,7 +2,8 @@ extends Node
 
 # The types of game objects there are.
 enum GameObjectType {
-	TEXT
+	TEXT,
+	WALL
 }
 
 # The types of text there are.
