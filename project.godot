@@ -22,7 +22,13 @@ config/icon="res://icon.png"
 [autoload]
 
 ButtonActions="*res://scripts/button_actions.gd"
+GlobalGridMap="*res://scripts/grid_map.gd"
 TurnHandler="*res://scripts/turn_handler.gd"
+
+[display]
+
+window/size/width=1920
+window/size/height=1080
 
 [input]
 
