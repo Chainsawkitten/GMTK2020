@@ -5,7 +5,8 @@ enum GameObjectType {
 	TEXT,
 	WALL,
 	PLAYER,
-	CAT
+	CAT,
+	LEVEL_SELECT
 }
 
 # The types of text there are.
@@ -23,7 +24,8 @@ enum TextType {
 	MOVE_UP,
 	MOVE_LEFT,
 	MOVE_RIGHT,
-	MOVE_DOWN
+	MOVE_DOWN,
+	SELECT
 }
 
 const cell_size : int = 32

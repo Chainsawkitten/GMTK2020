@@ -70,8 +70,8 @@ func return_to_parent():
 # Play a level.
 func play_level(var level : LevelDescription):
 	# Clear current level.
-	var game_node = get_node("/root/Game")
-	game_node.get_node("Level").queue_free()
+	var game_node = get_node("/root/Game/Level")
+	game_node.get_child(0).queue_free()
 	ButtonActions.clear_actions()
 	GlobalGridMap.clear_grid()
 	
