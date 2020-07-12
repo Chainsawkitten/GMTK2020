@@ -124,7 +124,10 @@ func text_type_to_action(var text_type : int) -> int:
 	return Action.SIZE
 
 # Press a button and see what happens.
-func press_button(var button : int):
+func press_button(var button : int) -> bool:
+	if get_actions(button).empty():
+		return false
+	
 	# Always check die first.
 	for action in get_actions(button):
 		if action == Action.DIE:
@@ -169,6 +172,7 @@ func press_button(var button : int):
 				Action.SMASH:
 					smash()
 	
+	return true
 
 # Move
 func move(var x : int, var y : int):

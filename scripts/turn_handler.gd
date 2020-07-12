@@ -28,7 +28,7 @@ var paused : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	call_deferred("reread_button_actions")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -54,11 +54,11 @@ func _process(_delta):
 						pass # TODO redo returns false when cannot redo more
 				else:
 					# Perform a turn.
-					turn += 1
-					perform_normal_input(input)
-					WorldObjects.update_world_objects()
-					reread_button_actions()
-					GlobalGridMap.save_state()
+					if perform_normal_input(input):
+						turn += 1
+						WorldObjects.update_world_objects()
+						reread_button_actions()
+						GlobalGridMap.save_state()
 
 
 # Get player input.
@@ -104,7 +104,7 @@ func redo():
 	pass
 
 # Perform normal game input.
-func perform_normal_input(var input : int):
+func perform_normal_input(var input : int) -> bool:
 	var button : int = 0
 	
 	match input:
@@ -125,7 +125,7 @@ func perform_normal_input(var input : int):
 		Press.BUTTON_Y:
 			button = ButtonActions.Button.Y
 	
-	ButtonActions.press_button(button)
+	return ButtonActions.press_button(button)
 
 # Reread all button actions based on text in the world.
 func reread_button_actions():
