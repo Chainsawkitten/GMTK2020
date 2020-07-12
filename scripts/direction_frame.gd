@@ -14,3 +14,14 @@ func _process(_delta):
 		animation.frame = 1
 	if direction_x == 0 and direction_y == 1:
 		animation.frame = 0
+		
+	# Diagonal directions.
+	if animation.frames.size() > 4:
+		if direction_x == -1 and direction_y == -1:
+			animation.frame = 6
+		if direction_x == 1 and direction_y == -1:
+			animation.frame = 7
+		if direction_x == -1 and direction_y == 1:
+			animation.frame = 5
+		if direction_x == 1 and direction_y == 1:
+			animation.frame = 4
