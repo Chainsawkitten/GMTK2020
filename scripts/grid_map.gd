@@ -97,13 +97,13 @@ func move_object(var from_x:int, var from_y:int, var to_x:int, var to_y:int, var
 func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(to_x, to_y):
 		return false
-	var cell = get_objects(to_x, to_y)
+	var cell = grid[grid_width * to_y + to_x]
 	if cell.empty():
 		return true
 	var must_push = false
-	for object in cell:
-		if object.is_barrier:
-			if object.is_pushable:
+	for cell_object in cell:
+		if cell_object.object.is_barrier:
+			if cell_object.object.is_pushable:
 				must_push = true
 			else:
 				return false
@@ -115,13 +115,13 @@ func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var directio
 func can_push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(from_x, from_y):
 		return false
-	var cell = get_objects(from_x, from_y)
+	var cell = grid[grid_width * from_y + from_x]
 	if cell.empty():
 		return true
 	var must_push = false
-	for object in cell:
-		if object.is_barrier:
-			if object.is_pushable:
+	for cell_object in cell:
+		if cell_object.object.is_barrier:
+			if cell_object.object.is_pushable:
 				must_push = true
 			else:
 				return false
@@ -139,17 +139,17 @@ func push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:i
 	assert(can_push(from_x, from_y, direction_x, direction_y))
 	if outside_grid(from_x, from_y):
 		return
-	var cell = get_objects(from_x, from_y)
+	var cell = grid[grid_width * from_y + from_x]
 	if cell.empty():
 		return
 
 	var any_pushable = false
-	for object in cell:
+	for cell_object in cell:
 		# Implicit from precondition can_push
-		assert(not object.is_barrier || object.is_pushable)
+		assert(not cell_object.object.is_barrier || cell_object.object.is_pushable)
 		# Assumption
-		assert(!(not object.is_barrier && object.is_pushable))
-		if object.is_pushable:
+		assert(!(not cell_object.object.is_barrier && cell_object.object.is_pushable))
+		if cell_object.object.is_pushable:
 			any_pushable = true
 			break
 
@@ -157,9 +157,9 @@ func push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:i
 		var to_x = from_x + direction_x
 		var to_y = from_y + direction_y
 		push(to_x, to_y, direction_x, direction_y)
-		for object in cell:
-			if object.is_pushable:
-				move_object(from_x, from_y, to_x, to_y, object)
+		for cell_object in cell:
+			if cell_object.object.is_pushable:
+				move_object(from_x, from_y, to_x, to_y, cell_object.object)
 
 
 
