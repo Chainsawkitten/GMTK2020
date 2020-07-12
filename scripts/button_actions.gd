@@ -27,6 +27,7 @@ enum Action {
 	WIN, # First non-special order action.
 	SELECT,
 	OPEN,
+	SMASH,
 	SWAP,
 	SIZE
 }
@@ -114,6 +115,8 @@ func text_type_to_action(var text_type : int) -> int:
 			return Action.OPEN
 		Global.TextType.SWAP:
 			return Action.SWAP
+		Global.TextType.SMASH:
+			return Action.SMASH
 	
 	return Action.SIZE
 
@@ -158,6 +161,8 @@ func press_button(var button : int):
 					open()
 				Action.SWAP:
 					swap()
+				Action.SMASH:
+					smash()
 	
 
 # Move
@@ -210,3 +215,12 @@ func swap():
 		
 		if any_object:
 			GlobalGridMap.move_object(player.grid_x, player.grid_y, pos_x, pos_y, player)
+
+# Smash
+func smash():
+	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
+		var pos_x = player.grid_x + player.direction_x
+		var pos_y = player.grid_y + player.direction_y
+		for object in GlobalGridMap.get_objects(pos_x, pos_y):
+			if object.smashable:
+				object.kill()

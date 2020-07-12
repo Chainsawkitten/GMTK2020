@@ -8,6 +8,7 @@ script = ExtResource( 1 )
 game_object_type = 1
 is_pushable = false
 swappable = false
+smashable = false
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )

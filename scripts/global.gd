@@ -30,7 +30,8 @@ enum TextType {
 	SELECT,
 	NOT,
 	OPEN,
-	SWAP
+	SWAP,
+	SMASH
 }
 
 const cell_size : int = 32

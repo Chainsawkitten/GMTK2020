@@ -1,0 +1,141 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://scenes/game_objects/text/button_up.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game_objects/text/walk_up.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game_objects/text/button_down.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game_objects/text/walk_left.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game_objects/text/walk_down.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game_objects/text/button_a.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/game_objects/wall.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/game_objects/barrier.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/game_objects/text/button_left.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/game_objects/text/walk_right.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/game_objects/text/button_right.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/game_objects/player.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/game_objects/text/button_b.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/game_objects/conveyor_down.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/game_objects/door.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/game_objects/conveyor_right.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/game_objects/conveyor_up.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/game_objects/text/smash.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/game_objects/conveyor_left.tscn" type="PackedScene" id=21]
+
+[node name="Level" type="Node2D"]
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="ButtonLeft" parent="Text" instance=ExtResource( 11 )]
+position = Vector2( 128, 0 )
+
+[node name="Is" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 160, 0 )
+
+[node name="WalkLeft" parent="Text" instance=ExtResource( 5 )]
+position = Vector2( 192, 0 )
+
+[node name="ButtonRight" parent="Text" instance=ExtResource( 13 )]
+position = Vector2( 256, 0 )
+
+[node name="Is2" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 288, 0 )
+
+[node name="WalkRight" parent="Text" instance=ExtResource( 12 )]
+position = Vector2( 320, 0 )
+
+[node name="WalkRight2" parent="Text" instance=ExtResource( 12 )]
+position = Vector2( 256, 128 )
+
+[node name="ButtonUp" parent="Text" instance=ExtResource( 1 )]
+position = Vector2( 384, 0 )
+
+[node name="Is3" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 416, 0 )
+
+[node name="WalkUp" parent="Text" instance=ExtResource( 3 )]
+position = Vector2( 448, 0 )
+
+[node name="ButtonDown" parent="Text" instance=ExtResource( 4 )]
+position = Vector2( 512, 0 )
+
+[node name="Is4" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 544, 0 )
+
+[node name="WalkDown" parent="Text" instance=ExtResource( 7 )]
+position = Vector2( 576, 0 )
+
+[node name="WalkDown2" parent="Text" instance=ExtResource( 7 )]
+position = Vector2( 320, 64 )
+
+[node name="ButtonA" parent="Text" instance=ExtResource( 8 )]
+position = Vector2( 128, 64 )
+
+[node name="Is5" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 160, 64 )
+
+[node name="Is7" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 256, 96 )
+
+[node name="Is6" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 288, 64 )
+
+[node name="ButtonB" parent="Text" instance=ExtResource( 15 )]
+position = Vector2( 256, 64 )
+
+[node name="Smash" parent="Text" instance=ExtResource( 20 )]
+position = Vector2( 192, 64 )
+
+[node name="Walls" type="Node2D" parent="."]
+
+[node name="Wall" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 288, 320 )
+
+[node name="Wall2" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 352, 320 )
+
+[node name="Wall3" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 320, 320 )
+
+[node name="Wall4" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 288, 352 )
+
+[node name="Wall5" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 288, 384 )
+
+[node name="Wall6" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 320, 352 )
+
+[node name="Wall7" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 320, 384 )
+
+[node name="Wall8" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 352, 352 )
+
+[node name="Wall9" parent="Walls" instance=ExtResource( 9 )]
+position = Vector2( 352, 384 )
+
+[node name="Door" parent="." instance=ExtResource( 17 )]
+position = Vector2( 288, 224 )
+
+[node name="Cat" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 352 )
+
+[node name="Player" parent="." instance=ExtResource( 14 )]
+position = Vector2( 64, 64 )
+
+[node name="Barrier" parent="." instance=ExtResource( 10 )]
+position = Vector2( 160, 384 )
+levels_to_beat = 21
+
+[node name="Conveyor" parent="." instance=ExtResource( 18 )]
+position = Vector2( 448, 352 )
+
+[node name="Conveyor2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 480, 352 )
+
+[node name="Conveyor3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 512, 352 )
+
+[node name="Conveyor4" parent="." instance=ExtResource( 21 )]
+position = Vector2( 544, 352 )
