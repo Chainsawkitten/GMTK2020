@@ -20,6 +20,9 @@ enum Press {
 	REDO
 }
 
+# The current turn. Only used to animate stuff.
+var turn  = 0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -46,6 +49,7 @@ func _process(_delta):
 				pass # TODO redo returns false when cannot redo more
 		else:
 			# Perform a turn.
+			turn += 1
 			perform_normal_input(input)
 			WorldObjects.update_world_objects()
 			reread_button_actions()

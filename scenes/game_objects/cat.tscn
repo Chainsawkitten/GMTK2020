@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://scripts/random_frame.gd" type="Script" id=1]
 [ext_resource path="res://graphics/game_objects/cat.png" type="Texture" id=2]
 [ext_resource path="res://graphics/game_objects/zz.png" type="Texture" id=3]
+[ext_resource path="res://scripts/animate_turn.gd" type="Script" id=4]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 2 )
@@ -77,3 +78,4 @@ centered = false
 [node name="zz" type="AnimatedSprite" parent="."]
 frames = SubResource( 13 )
 centered = false
+script = ExtResource( 4 )
