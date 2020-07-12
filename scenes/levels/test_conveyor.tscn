@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/game_objects/player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_objects/text/walk_up.tscn" type="PackedScene" id=2]
@@ -20,6 +20,7 @@
 [ext_resource path="res://scenes/game_objects/text/walk_right.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/game_objects/text/button_a.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/game_objects/text/button_b.tscn" type="PackedScene" id=20]
+[ext_resource path="res://scenes/game_objects/wall.tscn" type="PackedScene" id=21]
 
 [node name="Level" type="Node2D"]
 
@@ -190,3 +191,9 @@ position = Vector2( 544, 224 )
 
 [node name="ButtonY3" parent="." instance=ExtResource( 13 )]
 position = Vector2( 544, 192 )
+
+[node name="Wall" parent="." instance=ExtResource( 21 )]
+position = Vector2( 352, 224 )
+
+[node name="Wall2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 576, 320 )
