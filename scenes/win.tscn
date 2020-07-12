@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://graphics/pet/pet_bg.png" type="Texture" id=1]
 [ext_resource path="res://graphics/pet/hand4.png" type="Texture" id=2]
@@ -17,8 +17,10 @@
 [ext_resource path="res://graphics/pet/cat1.png" type="Texture" id=15]
 [ext_resource path="res://graphics/pet/cat3.png" type="Texture" id=16]
 [ext_resource path="res://scripts/win.gd" type="Script" id=17]
+[ext_resource path="res://sound_effects/meow.ogg" type="AudioStream" id=18]
+[ext_resource path="res://sound_effects/purr.ogg" type="AudioStream" id=19]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="SpriteFrames" id=3]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -43,11 +45,17 @@ centered = false
 
 [node name="Cat" type="AnimatedSprite" parent="."]
 position = Vector2( 304, 346 )
-frames = SubResource( 1 )
+frames = SubResource( 3 )
 centered = false
 
 [node name="Petting" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 4
+frame = 5
 playing = true
 centered = false
+
+[node name="MeowPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 18 )
+
+[node name="PurrPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 19 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/purr.ogg-cd7a230b65a43464a55ef3af39901b5d.oggstr"
+
+[deps]
+
+source_file="res://sound_effects/purr.ogg"
+dest_files=[ "res://.import/purr.ogg-cd7a230b65a43464a55ef3af39901b5d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

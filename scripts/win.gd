@@ -19,6 +19,7 @@ func _process(delta):
 	if win_stage == 1 and wait > duration * 0.2:
 		visible = true
 		win_stage = 2
+		get_node("PurrPlayer").play()
 	
 	if win_stage == 2 and wait > duration * 0.5:
 		LevelHandler.win()
@@ -28,6 +29,7 @@ func _process(delta):
 		TurnHandler.set_pause(false)
 		visible = false
 		win_stage = 0
+		get_node("PurrPlayer").stop()
 
 # Win the level.
 func win(var cat_version : int):
@@ -36,3 +38,4 @@ func win(var cat_version : int):
 		get_node("Cat").frame = cat_version
 		win_stage = 1
 		wait = 0.0
+		get_node("MeowPlayer").play()
