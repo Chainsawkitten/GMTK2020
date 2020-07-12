@@ -35,6 +35,7 @@ func create_overworld_levels():
 	create_leaf_level(overworld, "level0")
 	create_leaf_level(overworld, "level1")
 	create_leaf_level(overworld, "level_die")
+	create_leaf_level(overworld, "level_not_die")
 	create_leaf_level(overworld, "test_direction_level")
 	create_leaf_level(overworld, "test_not_level")
 	
