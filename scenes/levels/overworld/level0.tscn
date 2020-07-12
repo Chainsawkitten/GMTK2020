@@ -1,12 +1,238 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_objects/text/walk_right.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/game_objects/player.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/game_objects/text/button_right.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_objects/tree.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game_objects/flower.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game_objects/grass.tscn" type="PackedScene" id=8]
 
 [node name="Level" type="Node2D"]
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Tree" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 0, 96 )
+
+[node name="Tree2" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 96 )
+
+[node name="Tree3" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 0, 64 )
+
+[node name="Tree4" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 64 )
+
+[node name="Tree5" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 0, 32 )
+
+[node name="Tree6" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 32 )
+
+[node name="Tree7" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 0 )
+
+[node name="Tree8" parent="Decorations" instance=ExtResource( 6 )]
+
+[node name="Tree9" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 0 )
+
+[node name="Tree10" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 32 )
+
+[node name="Tree11" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 96 )
+
+[node name="Tree12" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 64 )
+
+[node name="Tree13" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 128 )
+
+[node name="Tree14" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 0, 128 )
+
+[node name="Tree15" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 352 )
+
+[node name="Tree16" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 96, 32 )
+
+[node name="Tree17" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 32 )
+
+[node name="Tree18" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 64 )
+
+[node name="Tree19" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 192, 352 )
+
+[node name="Tree20" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 224, 384 )
+
+[node name="Tree21" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 192, 384 )
+
+[node name="Tree22" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 384 )
+
+[node name="Tree23" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 128, 384 )
+
+[node name="Tree24" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 128, 416 )
+
+[node name="Tree25" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 416 )
+
+[node name="Tree26" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 224, 416 )
+
+[node name="Tree27" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 192, 416 )
+
+[node name="Tree28" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 96, 448 )
+
+[node name="Tree29" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 96, 416 )
+
+[node name="Tree30" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 96, 384 )
+
+[node name="Tree31" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 384 )
+
+[node name="Tree32" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 416 )
+
+[node name="Tree33" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 64, 448 )
+
+[node name="Tree34" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 416 )
+
+[node name="Tree35" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 32, 448 )
+
+[node name="Tree36" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 256, 448 )
+
+[node name="Tree37" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 224, 448 )
+
+[node name="Tree38" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 96, 480 )
+
+[node name="Tree39" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 480 )
+
+[node name="Tree40" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 192, 480 )
+
+[node name="Tree41" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 224, 480 )
+
+[node name="Tree42" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 160, 448 )
+
+[node name="Tree43" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 832, 384 )
+
+[node name="Tree44" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 864, 384 )
+
+[node name="Tree45" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 864, 416 )
+
+[node name="Tree46" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 832, 416 )
+
+[node name="Tree47" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 768, 448 )
+
+[node name="Tree48" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 800, 416 )
+
+[node name="Tree49" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 800, 448 )
+
+[node name="Tree50" parent="Decorations" instance=ExtResource( 6 )]
+position = Vector2( 896, 416 )
+
+[node name="Grass" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 128, 480 )
+
+[node name="Grass2" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 128, 448 )
+
+[node name="Grass3" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 32, 480 )
+
+[node name="Grass4" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 64, 480 )
+
+[node name="Grass5" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 832, 64 )
+
+[node name="Grass6" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 864, 64 )
+
+[node name="Grass7" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 832, 32 )
+
+[node name="Grass8" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 832, 448 )
+
+[node name="Grass9" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 800, 480 )
+
+[node name="Grass10" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 768, 480 )
+
+[node name="Grass11" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 736, 448 )
+
+[node name="Grass12" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 768, 416 )
+
+[node name="Grass13" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 736, 480 )
+
+[node name="Grass14" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 704, 448 )
+
+[node name="Grass15" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 64, 160 )
+
+[node name="Grass16" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 96, 64 )
+
+[node name="Grass17" parent="Decorations" instance=ExtResource( 8 )]
+position = Vector2( 160, 0 )
+
+[node name="Flower" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 128, 0 )
+
+[node name="Flower2" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 192, 448 )
+
+[node name="Flower3" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 672, 352 )
+
+[node name="Flower4" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 640, 160 )
+
+[node name="Flower5" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 288, 64 )
+
+[node name="Flower6" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 192, 224 )
+
+[node name="Flower7" parent="Decorations" instance=ExtResource( 7 )]
+position = Vector2( 192, 192 )
 
 [node name="Cat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 544, 256 )
