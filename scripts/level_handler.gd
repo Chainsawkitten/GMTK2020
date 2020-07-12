@@ -20,9 +20,6 @@ var current_level : LevelDescription
 # The top level.
 var top_level : LevelDescription
 
-# The number of total beaten levels.
-var total_beaten : int = 0
-
 func _init():
 	top_level = LevelDescription.new()
 	top_level.name = "over_overworld"
@@ -93,7 +90,6 @@ func win():
 	# Mark the level as beaten.
 	if !current_level.beaten:
 		current_level.beaten = true
-		total_beaten += 1
 	
 	# TODO Handle beating the top level.
 	if current_level.parent == null:
@@ -121,3 +117,11 @@ func play_level(var level : LevelDescription):
 	game_node.add_child(new_level)
 	
 	TurnHandler.reread_button_actions()
+
+# Get beaten levels in the current world.
+func get_beaten_levels() -> int:
+	var beaten = 0
+	for child in current_level.children:
+		if child.beaten:
+			beaten += 1
+	return beaten

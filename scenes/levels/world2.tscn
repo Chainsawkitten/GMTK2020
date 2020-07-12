@@ -339,6 +339,7 @@ position = Vector2( 704, 0 )
 
 [node name="Barrier" parent="." instance=ExtResource( 15 )]
 position = Vector2( 448, 256 )
+levels_to_beat = 2
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 448, 128 )
