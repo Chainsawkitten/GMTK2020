@@ -139,14 +139,28 @@ func read_text(var is_text, var x : int, var y : int):
 	var is_x : int = is_text.grid_x
 	var is_y : int = is_text.grid_y
 	
+	# Get whether there's a not.
+	var there_is_not : bool = false
+	var two_before_x : int = is_x - 2 * x
+	var two_before_y : int = is_y - 2 * y
+	var objects = GlobalGridMap.get_objects(two_before_x, two_before_y)
+	for o in objects:
+		if o is Text and o.text_type == Global.TextType.NOT:
+			there_is_not = true
+	
 	# Get buttons before the is.
 	var before_x : int = is_x - x
 	var before_y : int = is_y - y
-	var objects = GlobalGridMap.get_objects(before_x, before_y)
+	objects = GlobalGridMap.get_objects(before_x, before_y)
 	for o in objects:
 		if o is Text:
 			if o.is_button():
-				buttons.push_back(ButtonActions.text_type_to_button(o.text_type))
+				if there_is_not:
+					for button in range(ButtonActions.Button.SIZE):
+						if button != ButtonActions.text_type_to_button(o.text_type):
+							buttons.push_back(button)
+				else:
+					buttons.push_back(ButtonActions.text_type_to_button(o.text_type))
 	
 	# Get actions after the is.
 	var after_x : int = is_x + x

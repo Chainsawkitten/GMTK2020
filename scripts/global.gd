@@ -25,7 +25,8 @@ enum TextType {
 	MOVE_LEFT,
 	MOVE_RIGHT,
 	MOVE_DOWN,
-	SELECT
+	SELECT,
+	NOT
 }
 
 const cell_size : int = 32
