@@ -23,6 +23,12 @@ enum Press {
 # The current turn. Only used to animate stuff.
 var turn  = 0
 
+# How long to wait between inputs.
+const time_to_wait_for_input = 0.27
+
+# How long we've waited.
+var wait_for_input = time_to_wait_for_input
+
 # Whether the game is paused for whatever reason.
 var paused : bool = false
 
@@ -31,12 +37,16 @@ func _ready():
 	call_deferred("reread_button_actions")
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _process(delta):
+	wait_for_input += delta
+	
 	# Check if player has performed (exactly one!) input.
 	var input : int = get_player_input()
 	
 	# If any input was performed, 
 	if (input != Press.NONE):
+		wait_for_input = 0.0
+		
 		if (input == Press.MENU):
 			# TODO
 			pass
@@ -66,10 +76,10 @@ func get_player_input() -> int:
 	if (Input.is_action_just_pressed("button_start")):
 		return Press.MENU
 	
-	if (Input.is_action_just_pressed("button_undo")):
+	if (Input.is_action_just_pressed("button_undo") or (Input.is_action_pressed("button_undo") and wait_for_input > time_to_wait_for_input)):
 		return Press.UNDO
 		
-	if (Input.is_action_just_pressed("button_redo")):
+	if (Input.is_action_just_pressed("button_redo") or (Input.is_action_pressed("button_redo") and wait_for_input > time_to_wait_for_input)):
 		return Press.REDO
 	
 	var any_pressed : bool = false
@@ -79,7 +89,7 @@ func get_player_input() -> int:
 					 "button_a", "button_b", "button_x", "button_y"]
 	
 	for i in range(Press.BUTTON_UP, Press.UNDO):
-		if (Input.is_action_just_pressed(mappings[i])):
+		if (Input.is_action_just_pressed(mappings[i]) or (Input.is_action_pressed(mappings[i]) and wait_for_input > time_to_wait_for_input)):
 			input = i
 			if (!any_pressed):
 				any_pressed = true
