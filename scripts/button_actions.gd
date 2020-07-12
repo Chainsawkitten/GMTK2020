@@ -187,7 +187,7 @@ func die():
 
 # Win
 func win():
-	LevelHandler.win()
+	get_node("/root/Game/Win").win(0)
 
 # Select
 func select():

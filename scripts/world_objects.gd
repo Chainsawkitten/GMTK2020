@@ -13,5 +13,5 @@ func update_cat(var cat : GameObject):
 	# Check if the player is in the same position.
 	for object in GlobalGridMap.get_objects(cat.grid_x, cat.grid_y):
 		if object.game_object_type == Global.GameObjectType.PLAYER:
-			LevelHandler.win()
+			get_node("/root/Game/Win").win(cat.get_node("AnimatedSprite").frame)
 			return

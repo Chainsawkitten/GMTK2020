@@ -23,6 +23,9 @@ enum Press {
 # The current turn. Only used to animate stuff.
 var turn  = 0
 
+# Whether the game is paused for whatever reason.
+var paused : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -37,23 +40,25 @@ func _process(_delta):
 		if (input == Press.MENU):
 			# TODO
 			pass
-		elif (input == Press.UNDO):
-			if GlobalGridMap.undo():
-				reread_button_actions()
-			else:
-				pass # TODO undo returns false when cannot undo more
-		elif (input == Press.REDO):
-			if GlobalGridMap.redo():
-				reread_button_actions()
-			else:
-				pass # TODO redo returns false when cannot redo more
 		else:
-			# Perform a turn.
-			turn += 1
-			perform_normal_input(input)
-			WorldObjects.update_world_objects()
-			reread_button_actions()
-			GlobalGridMap.save_state()
+			if !paused:
+				if (input == Press.UNDO):
+					if GlobalGridMap.undo():
+						reread_button_actions()
+					else:
+						pass # TODO undo returns false when cannot undo more
+				elif (input == Press.REDO):
+					if GlobalGridMap.redo():
+						reread_button_actions()
+					else:
+						pass # TODO redo returns false when cannot redo more
+				else:
+					# Perform a turn.
+					turn += 1
+					perform_normal_input(input)
+					WorldObjects.update_world_objects()
+					reread_button_actions()
+					GlobalGridMap.save_state()
 
 
 # Get player input.
@@ -190,4 +195,9 @@ func read_text(var is_text, var x : int, var y : int):
 		
 		for na in not_actions:
 			ButtonActions.add_not_action(b, na)
+
+# Set whether the game is paused.
+func set_pause(var pause : bool):
+	paused = pause
 	
+	reread_button_actions()
