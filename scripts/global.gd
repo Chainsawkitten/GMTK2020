@@ -6,7 +6,8 @@ enum GameObjectType {
 	WALL,
 	PLAYER,
 	CAT,
-	LEVEL_SELECT
+	LEVEL_SELECT,
+	CONVEYOR
 }
 
 # The types of text there are.

@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/game_object.gd" type="Script" id=1]
+[ext_resource path="res://graphics/game_objects/conveyor.png" type="Texture" id=2]
+
+[node name="Conveyor" type="Node2D"]
+script = ExtResource( 1 )
+game_object_type = 5
+is_pushable = false
+is_barrier = false
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 32, 32 )
+rotation = 3.14159
+texture = ExtResource( 2 )
+centered = false
