@@ -8,6 +8,12 @@ func update_world_objects():
 	for crocodile in GlobalGridMap.get_objects_by_type(Global.GameObjectType.CROCODILE):
 		update_crocodile(crocodile)
 	
+	for lava in GlobalGridMap.get_objects_by_type(Global.GameObjectType.LAVA):
+		update_lava(lava)
+	
+	for trap in GlobalGridMap.get_objects_by_type(Global.GameObjectType.TRAP):
+		update_trap(trap)
+	
 	for cat in GlobalGridMap.get_objects_by_type(Global.GameObjectType.CAT):
 		update_cat(cat)
 
@@ -37,3 +43,20 @@ func update_crocodile(var crocodile : GameObject):
 	for object in GlobalGridMap.get_objects(crocodile.grid_x, crocodile.grid_y):
 		if object.game_object_type == Global.GameObjectType.PLAYER or object.game_object_type == Global.GameObjectType.CAT:
 			object.kill()
+
+# Update the lava.
+func update_lava(var lava : GameObject):
+	for object in GlobalGridMap.get_objects(lava.grid_x, lava.grid_y):
+		if object.game_object_type != Global.GameObjectType.LAVA:
+			object.kill()
+
+# Update the trap.
+func update_trap(var trap : GameObject):
+	var caught_something = false
+	for object in GlobalGridMap.get_objects(trap.grid_x, trap.grid_y):
+		if object.game_object_type == Global.GameObjectType.PLAYER or object.game_object_type == Global.GameObjectType.CAT or object.game_object_type == Global.GameObjectType.CROCODILE:
+			object.kill()
+			caught_something = true
+	
+	if caught_something:
+		trap.kill()
