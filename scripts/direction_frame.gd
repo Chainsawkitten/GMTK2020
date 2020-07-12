@@ -16,7 +16,7 @@ func _process(_delta):
 		animation.frame = 0
 		
 	# Diagonal directions.
-	if animation.frames.size() > 4:
+	if animation.frames.get_frame_count("default") > 4:
 		if direction_x == -1 and direction_y == -1:
 			animation.frame = 6
 		if direction_x == 1 and direction_y == -1:

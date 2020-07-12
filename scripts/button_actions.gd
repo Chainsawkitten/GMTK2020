@@ -19,12 +19,12 @@ enum Button {
 
 # Actions that can be performed by pressing a button.
 enum Action {
+	DIE,
 	MOVE_UP,
 	MOVE_LEFT,
 	MOVE_RIGHT,
 	MOVE_DOWN,
-	DIE,
-	WIN,
+	WIN, # First non-special order action.
 	SELECT,
 	SIZE
 }
@@ -97,8 +97,30 @@ func text_type_to_action(var text_type : int) -> int:
 
 # Press a button and see what happens.
 func press_button(var button : int):
-	# Perform actions in the order of the enum.
-	for i in range(Action.SIZE):
+	# Always check die first.
+	for action in get_actions(button):
+		if action == Action.DIE:
+			die()
+	
+	# Then move.
+	var direction_x = 0
+	var direction_y = 0
+	for action in get_actions(button):
+		match action:
+			Action.MOVE_UP:
+				direction_y -= 1
+			Action.MOVE_LEFT:
+				direction_x -= 1
+			Action.MOVE_RIGHT:
+				direction_x += 1
+			Action.MOVE_DOWN:
+				direction_y += 1
+	
+	if direction_x != 0 or direction_y != 0:
+		move(direction_x, direction_y)
+	
+	# Then other actions, in order of the enum.
+	for i in range(Action.WIN, Action.SIZE):
 		var found = false
 		for action in get_actions(button):
 			if i == action:
@@ -106,20 +128,11 @@ func press_button(var button : int):
 		
 		if found:
 			match i:
-				Action.MOVE_UP:
-					move(0, -1)
-				Action.MOVE_LEFT:
-					move(-1, 0)
-				Action.MOVE_RIGHT:
-					move(1, 0)
-				Action.MOVE_DOWN:
-					move(0, 1)
-				Action.DIE:
-					die()
 				Action.WIN:
 					win()
 				Action.SELECT:
 					select()
+	
 
 # Move
 func move(var x : int, var y : int):
