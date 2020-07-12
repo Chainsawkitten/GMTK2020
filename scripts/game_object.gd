@@ -10,6 +10,8 @@ export var is_barrier: bool = true
 export var direction_x : int = 0
 export var direction_y : int = 1
 
+export var swappable : bool = true
+
 var grid_x : int
 var grid_y : int
 

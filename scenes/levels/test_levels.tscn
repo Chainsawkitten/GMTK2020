@@ -83,7 +83,7 @@ position = Vector2( 288, 224 )
 level = 3
 
 [node name="Level4" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 448, 224 )
+position = Vector2( 352, 224 )
 level = 4
 
 [node name="Level5" parent="Levels" instance=ExtResource( 12 )]
@@ -142,6 +142,16 @@ margin_top = 192.0
 margin_right = 352.0
 margin_bottom = 206.0
 text = "Door"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 352.0
+margin_top = 192.0
+margin_right = 416.0
+margin_bottom = 206.0
+text = "Swap"
 __meta__ = {
 "_edit_use_anchors_": false
 }
