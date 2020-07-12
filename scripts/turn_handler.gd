@@ -32,6 +32,8 @@ var wait_for_input = time_to_wait_for_input
 # Whether the game is paused for whatever reason.
 var paused : bool = false
 
+var menu : Node2D = null
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	call_deferred("reread_button_actions")
@@ -48,8 +50,14 @@ func _process(delta):
 		wait_for_input = 0.0
 		
 		if (input == Press.MENU):
-			# TODO
-			pass
+			if menu == null:
+				menu = get_node("/root/Game/PauseMenu")
+			if menu != null:
+				# check that the game is not paused for some other reason
+				# such as the win screen
+				if not (paused && not menu.visible):
+					menu.visible = not paused
+					set_pause(not paused)
 		else:
 			if !paused:
 				if (input == Press.UNDO):
@@ -69,6 +77,11 @@ func _process(delta):
 						WorldObjects.update_world_objects()
 						reread_button_actions()
 						GlobalGridMap.save_state()
+			else: # paused
+				if (input == Press.BUTTON_Y):
+					GlobalGridMap.reset_action()
+					menu.visible = false
+					set_pause(false)
 
 
 # Get player input.

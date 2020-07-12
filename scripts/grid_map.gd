@@ -181,6 +181,15 @@ func save_state():
 	# update undo frame index
 	undo_frame_index = grid_undo_frames.size() - 1;
 
+func reset_action():
+	if undo_frame_index <= 0:
+		# At oldest state, cannot undo more
+		return false
+	# Go back to previous state and restore
+	undo_frame_index = 0
+	restore_state()
+	return true
+
 # Undo the last turn.
 func undo():
 	if undo_frame_index <= 0:
