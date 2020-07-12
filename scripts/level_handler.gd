@@ -29,6 +29,7 @@ func _init():
 	
 	create_overworld_levels(top_level)
 	create_test_levels(top_level)
+	create_world2_levels(top_level)
 	
 	current_level = top_level.children[0].children[0]
 
@@ -46,10 +47,18 @@ func create_overworld_levels(var parent : LevelDescription):
 	create_leaf_level(overworld, "lava_level")
 	create_leaf_level(overworld, "croco_dash")
 	create_leaf_level(overworld, "save_the_cat")
-	create_leaf_level(overworld, "swap_rocks")
-	create_leaf_level(overworld, "door_swap")
 	
 	parent.children.push_back(overworld)
+
+func create_world2_levels(var parent : LevelDescription):
+	var world2 = LevelDescription.new()
+	world2.name = "world2"
+	world2.parent = parent
+	
+	create_leaf_level(world2, "swap_rocks")
+	create_leaf_level(world2, "door_swap")
+	
+	parent.children.push_back(world2)
 
 # Create the levels meant for testing things.
 func create_test_levels(var parent : LevelDescription):

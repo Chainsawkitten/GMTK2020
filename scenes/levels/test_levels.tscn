@@ -90,22 +90,6 @@ level = 4
 position = Vector2( 416, 224 )
 level = 5
 
-[node name="Level6" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 576, 224 )
-level = 6
-
-[node name="Level7" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 640, 224 )
-level = 7
-
-[node name="Level8" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 704, 224 )
-level = 8
-
-[node name="Level9" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 768, 224 )
-level = 9
-
 [node name="Label2" type="Label" parent="."]
 margin_left = 64.0
 margin_top = 192.0
