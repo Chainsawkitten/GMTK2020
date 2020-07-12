@@ -54,6 +54,7 @@ func clear_grid():
 		grid[k] = Array()
 	grid_undo_frames.clear()
 	undo_frame_index = -1
+	call_deferred("save_state")
 
 # Get all objects at a given position.
 func get_objects(var x:int, var y:int):
