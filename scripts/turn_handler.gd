@@ -130,10 +130,10 @@ func reread_button_actions():
 		read_text(i, 1, 0)
 
 # Read a text in a given direction.
-# TODO Handle NOT
 func read_text(var is_text, var x : int, var y : int):
 	var buttons = []
 	var actions = []
+	var not_actions = []
 	
 	# Get the is' position.
 	var is_x : int = is_text.grid_x
@@ -170,9 +170,20 @@ func read_text(var is_text, var x : int, var y : int):
 		if o is Text:
 			if o.is_action():
 				actions.push_back(ButtonActions.text_type_to_action(o.text_type))
+			elif o.text_type == Global.TextType.NOT:
+				# Get actions after not.
+				var after_not_x : int = after_x + x
+				var after_not_y : int = after_y + y
+				var not_objects = GlobalGridMap.get_objects(after_not_x, after_not_y)
+				for no in not_objects:
+					if no is Text and no.is_action():
+						not_actions.push_back(ButtonActions.text_type_to_action((no.text_type)))
 	
 	# Map buttons to actions.
 	for b in buttons:
 		for a in actions:
 			ButtonActions.add_action(b, a)
+		
+		for na in not_actions:
+			ButtonActions.add_not_action(b, na)
 	

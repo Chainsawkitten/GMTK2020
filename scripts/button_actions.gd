@@ -32,6 +32,9 @@ enum Action {
 # Actions associated with a button.
 var actions = []
 
+# Not actions prevent a button from doing an action.
+var not_actions = []
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	clear_actions()
@@ -39,8 +42,10 @@ func _ready():
 # Clear all actions associated with buttons.
 func clear_actions():
 	actions.clear()
+	not_actions.clear()
 	for _i in range(Button.SIZE):
 		actions.push_back(Array())
+		not_actions.push_back(Array())
 
 # Add an action to a button.
 func add_action(var button : int, var action : int):
@@ -51,9 +56,20 @@ func add_action(var button : int, var action : int):
 	
 	actions[button].push_back(action)
 
+# Add an override, making a button never do a certain action.
+func add_not_action(var button : int, var not_action : int):
+	not_actions[button].push_back(not_action)
+
 # Get all actions associated with a button.
 func get_actions(var button : int):
-	return actions[button]
+	var values = []
+	
+	# Exclude not:ed actions.
+	for action in actions[button]:
+		if !not_actions[button].has(action):
+			values.push_back(action)
+	
+	return values
 
 # Get button from text type.
 func text_type_to_button(var text_type : int) -> int:
