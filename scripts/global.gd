@@ -36,7 +36,8 @@ enum TextType {
 	OPEN,
 	SWAP,
 	SMASH,
-	TURN
+	TURN,
+	MENU
 }
 
 const cell_size : int = 32
