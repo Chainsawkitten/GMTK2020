@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_objects/text/button_left.tscn" type="PackedScene" id=2]
@@ -10,12 +10,10 @@
 [ext_resource path="res://scenes/game_objects/text/button_up.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/game_objects/text/walk_left.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/game_objects/player.tscn" type="PackedScene" id=10]
-[ext_resource path="res://scenes/game_objects/wall.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/game_objects/level_select.tscn" type="PackedScene" id=12]
 [ext_resource path="res://scenes/game_objects/text/button_a.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/game_objects/text/select.tscn" type="PackedScene" id=14]
-[ext_resource path="res://scenes/game_objects/barrier.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=16]
 
 [node name="Level" type="Node2D"]
 
@@ -67,133 +65,103 @@ position = Vector2( 512, 0 )
 
 [node name="Walls" type="Node2D" parent="."]
 
-[node name="Wall" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 32, 96 )
-
-[node name="Wall2" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 96, 64 )
-
-[node name="Wall20" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 64, 64 )
-
-[node name="Wall21" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 64, 128 )
-
-[node name="Wall22" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 96, 128 )
-
-[node name="Wall3" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 128, 64 )
-
-[node name="Wall4" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 160, 64 )
-
-[node name="Wall5" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 192, 64 )
-
-[node name="Wall6" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 224, 64 )
-
-[node name="Wall7" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 128, 128 )
-
-[node name="Wall8" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 160, 128 )
-
-[node name="Wall9" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 192, 128 )
-
-[node name="Wall10" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 224, 128 )
-
-[node name="Wall11" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 256, 64 )
-
-[node name="Wall12" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 288, 64 )
-
-[node name="Wall13" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 320, 64 )
-
-[node name="Wall14" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 352, 64 )
-
-[node name="Wall15" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 384, 64 )
-
-[node name="Wall16" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 416, 64 )
-
-[node name="Wall17" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 448, 64 )
-
-[node name="Wall18" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 480, 64 )
-
-[node name="Wall19" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 512, 64 )
-
 [node name="Levels" type="Node2D" parent="."]
 
 [node name="Level0" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 96, 96 )
+position = Vector2( 96, 224 )
 
 [node name="Level1" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 128, 96 )
+position = Vector2( 160, 224 )
 level = 1
 
 [node name="Level2" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 192, 96 )
+position = Vector2( 224, 224 )
 level = 2
 
 [node name="Level3" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 224, 96 )
+position = Vector2( 288, 224 )
 level = 3
 
 [node name="Level4" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 288, 96 )
+position = Vector2( 448, 224 )
 level = 4
 
 [node name="Level5" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 320, 96 )
+position = Vector2( 512, 224 )
 level = 5
 
 [node name="Level6" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 352, 96 )
+position = Vector2( 576, 224 )
 level = 6
 
 [node name="Level7" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 384, 96 )
+position = Vector2( 640, 224 )
 level = 7
 
 [node name="Level8" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 416, 96 )
+position = Vector2( 704, 224 )
 level = 8
 
 [node name="Level9" parent="Levels" instance=ExtResource( 12 )]
-position = Vector2( 448, 96 )
+position = Vector2( 768, 224 )
 level = 9
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 192.0
+margin_right = 130.0
+margin_bottom = 206.0
+text = "Directions"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 160.0
+margin_top = 192.0
+margin_right = 192.0
+margin_bottom = 206.0
+text = "Not"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = 224.0
+margin_top = 192.0
+margin_right = 256.0
+margin_bottom = 206.0
+text = "Conveyor"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = 288.0
+margin_top = 192.0
+margin_right = 352.0
+margin_bottom = 206.0
+text = "Door"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 352.0
+margin_top = 96.0
+margin_right = 484.0
+margin_bottom = 127.0
+text = "TEST LEVELS
+You... shouldn't be here...
+Fine. Do whatever you want."
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Barriers" type="Node2D" parent="."]
 
-[node name="Barrier" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 160, 32 )
-levels_to_beat = 2
-
-[node name="Barrier2" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 256, 32 )
-levels_to_beat = 4
-
-[node name="Barrier3" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 608, 192 )
-levels_to_beat = 7
-
-[node name="Barrier4" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 608, 224 )
-levels_to_beat = 8
-
-[node name="Cat" parent="." instance=ExtResource( 16 )]
-position = Vector2( 64, 96 )
+[node name="Cat" parent="." instance=ExtResource( 11 )]
+position = Vector2( 448, 320 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
-position = Vector2( 96, 96 )
+position = Vector2( 128, 320 )

@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_objects/text/button_left.tscn" type="PackedScene" id=2]
@@ -15,7 +15,6 @@
 [ext_resource path="res://scenes/game_objects/text/button_a.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/game_objects/text/select.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/game_objects/barrier.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=16]
 
 [node name="Level" type="Node2D"]
 
@@ -68,7 +67,7 @@ position = Vector2( 512, 0 )
 [node name="Walls" type="Node2D" parent="."]
 
 [node name="Wall" parent="Walls" instance=ExtResource( 11 )]
-position = Vector2( 32, 96 )
+position = Vector2( 64, 96 )
 
 [node name="Wall2" parent="Walls" instance=ExtResource( 11 )]
 position = Vector2( 96, 64 )
@@ -191,9 +190,6 @@ levels_to_beat = 7
 [node name="Barrier4" parent="Barriers" instance=ExtResource( 15 )]
 position = Vector2( 608, 224 )
 levels_to_beat = 8
-
-[node name="Cat" parent="." instance=ExtResource( 16 )]
-position = Vector2( 64, 96 )
 
 [node name="Player" parent="." instance=ExtResource( 10 )]
 position = Vector2( 96, 96 )

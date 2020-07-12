@@ -24,29 +24,44 @@ var top_level : LevelDescription
 var total_beaten : int = 0
 
 func _init():
-	top_level = create_overworld_levels()
-	current_level = top_level.children[0]
+	top_level = LevelDescription.new()
+	top_level.name = "over_overworld"
+	
+	create_overworld_levels(top_level)
+	create_test_levels(top_level)
+	
+	current_level = top_level.children[0].children[0]
 
 # Create all the levels in the overworld.
-func create_overworld_levels():
+func create_overworld_levels(var parent : LevelDescription):
 	var overworld = LevelDescription.new()
 	overworld.name = "overworld"
+	overworld.parent = parent
 	
 	create_leaf_level(overworld, "level0")
 	create_leaf_level(overworld, "level1")
 	create_leaf_level(overworld, "level_die")
 	create_leaf_level(overworld, "level_not_die")
-	create_leaf_level(overworld, "test_direction_level")
-	create_leaf_level(overworld, "test_not_level")
-	create_leaf_level(overworld, "test_conveyor")
-	create_leaf_level(overworld, "test_door_level")
 	
-	return overworld
+	parent.children.push_back(overworld)
+
+# Create the levels meant for testing things.
+func create_test_levels(var parent : LevelDescription):
+	var test_levels = LevelDescription.new()
+	test_levels.name = "test_levels"
+	test_levels.parent = parent
+	
+	create_leaf_level(test_levels, "test_direction_level")
+	create_leaf_level(test_levels, "test_not_level")
+	create_leaf_level(test_levels, "test_conveyor")
+	create_leaf_level(test_levels, "test_door_level")
+	
+	parent.children.push_back(test_levels)
 
 # Create a leaf-node level.
 func create_leaf_level(var parent : LevelDescription, var name : String):
 	var level = LevelDescription.new()
-	level.name = name
+	level.name = parent.name + "/" + name
 	level.parent = parent
 	
 	parent.children.push_back(level)

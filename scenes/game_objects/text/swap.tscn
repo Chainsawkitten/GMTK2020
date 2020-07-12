@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://scripts/text.gd" type="Script" id=1]
-[ext_resource path="res://graphics/game_objects/text/open.png" type="Texture" id=2]
+[ext_resource path="res://graphics/game_objects/text/swap.png" type="Texture" id=2]
 
-[node name="Open" type="Node2D"]
+[node name="Swap" type="Node2D"]
 script = ExtResource( 1 )
-text_type = 16
+text_type = 17
 
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 2 )
