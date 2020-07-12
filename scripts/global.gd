@@ -11,7 +11,8 @@ enum GameObjectType {
 	DOOR,
 	CROCODILE,
 	LAVA,
-	TRAP
+	TRAP,
+	DECORATION
 }
 
 # The types of text there are.
