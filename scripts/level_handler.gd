@@ -44,6 +44,7 @@ func create_overworld_levels(var parent : LevelDescription):
 	create_leaf_level(overworld, "level_not_die")
 	create_leaf_level(overworld, "directional_movement")
 	create_leaf_level(overworld, "croco_dash")
+	create_leaf_level(overworld, "door_swap")
 	
 	parent.children.push_back(overworld)
 
