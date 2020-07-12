@@ -205,15 +205,15 @@ level = 7
 [node name="Barriers" type="Node2D" parent="."]
 
 [node name="Barrier" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 288, 32 )
+position = Vector2( 288, 96 )
 levels_to_beat = 2
 
 [node name="Barrier2" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 384, 32 )
+position = Vector2( 384, 96 )
 levels_to_beat = 4
 
 [node name="Barrier3" parent="Barriers" instance=ExtResource( 15 )]
-position = Vector2( 416, 288 )
+position = Vector2( 448, 256 )
 levels_to_beat = 8
 
 [node name="Decoration" type="Node2D" parent="."]

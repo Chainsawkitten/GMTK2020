@@ -1,0 +1,58 @@
+[gd_scene format=2]
+
+[node name="Level" type="Node2D"]
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_top = 64.0
+margin_right = 960.0
+margin_bottom = 576.0
+bbcode_enabled = true
+bbcode_text = "[center]THE END
+
+A game by
+Chainsawkitten
+Mechanista
+
+Cat Meow by
+Mafon2
+Licensed under CC0 1.0 Universal (CC0 1.0)
+
+Cat Purr by
+Soundmary
+Licensed under Attribution 3.0 Unported (CC BY 3.0)
+
+Synthesized_Explosion_08 by
+RSilveira_88
+Licensed under Attribution 3.0 Unported (CC BY 3.0)
+
+Music from https://filmmusic.io
+\"Darkest Child\" by Kevin MacLeod (https://incompetech.com)
+License: CC BY (http://creativecommons.org/licenses/by/4.0/)
+
+Thanks for playing![/center]"
+text = "THE END
+
+A game by
+Chainsawkitten
+Mechanista
+
+Cat Meow by
+Mafon2
+Licensed under CC0 1.0 Universal (CC0 1.0)
+
+Cat Purr by
+Soundmary
+Licensed under Attribution 3.0 Unported (CC BY 3.0)
+
+Synthesized_Explosion_08 by
+RSilveira_88
+Licensed under Attribution 3.0 Unported (CC BY 3.0)
+
+Music from https://filmmusic.io
+\"Darkest Child\" by Kevin MacLeod (https://incompetech.com)
+License: CC BY (http://creativecommons.org/licenses/by/4.0/)
+
+Thanks for playing!"
+__meta__ = {
+"_edit_use_anchors_": false
+}

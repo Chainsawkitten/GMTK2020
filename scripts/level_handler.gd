@@ -91,8 +91,12 @@ func win():
 	if !current_level.beaten:
 		current_level.beaten = true
 	
-	# TODO Handle beating the top level.
+	# Beating the top level.
 	if current_level.parent == null:
+		var credits = LevelDescription.new()
+		credits.name = "credits"
+		
+		play_level(credits)
 		return
 	
 	return_to_parent()
