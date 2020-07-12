@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/game_objects/text/button_up.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=2]
@@ -23,6 +23,7 @@
 [ext_resource path="res://scenes/game_objects/conveyor_left.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/game_objects/text/button_x.tscn" type="PackedScene" id=22]
 [ext_resource path="res://scenes/game_objects/text/turn.tscn" type="PackedScene" id=23]
+[ext_resource path="res://scenes/game_objects/crocodile.tscn" type="PackedScene" id=24]
 
 [node name="Level" type="Node2D"]
 
@@ -150,3 +151,11 @@ position = Vector2( 512, 352 )
 
 [node name="Conveyor4" parent="." instance=ExtResource( 21 )]
 position = Vector2( 544, 352 )
+
+[node name="Crocodile" parent="." instance=ExtResource( 24 )]
+position = Vector2( 704, 256 )
+
+[node name="Crocodile2" parent="." instance=ExtResource( 24 )]
+position = Vector2( 704, 320 )
+direction_x = -1
+direction_y = 0

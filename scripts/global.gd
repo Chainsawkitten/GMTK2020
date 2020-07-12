@@ -8,7 +8,8 @@ enum GameObjectType {
 	CAT,
 	LEVEL_SELECT,
 	CONVEYOR,
-	DOOR
+	DOOR,
+	CROCODILE
 }
 
 # The types of text there are.

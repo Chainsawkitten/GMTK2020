@@ -38,6 +38,7 @@ animations = [ {
 [node name="Wall" type="Node2D"]
 script = ExtResource( 1 )
 game_object_type = 1
+is_pushable = false
 swappable = false
 smashable = false
 
