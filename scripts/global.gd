@@ -7,7 +7,8 @@ enum GameObjectType {
 	PLAYER,
 	CAT,
 	LEVEL_SELECT,
-	CONVEYOR
+	CONVEYOR,
+	DOOR
 }
 
 # The types of text there are.
@@ -27,7 +28,8 @@ enum TextType {
 	MOVE_RIGHT,
 	MOVE_DOWN,
 	SELECT,
-	NOT
+	NOT,
+	OPEN
 }
 
 const cell_size : int = 32

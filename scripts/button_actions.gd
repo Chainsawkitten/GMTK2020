@@ -26,6 +26,7 @@ enum Action {
 	MOVE_DOWN,
 	WIN, # First non-special order action.
 	SELECT,
+	OPEN,
 	SIZE
 }
 
@@ -108,6 +109,8 @@ func text_type_to_action(var text_type : int) -> int:
 			return Action.MOVE_DOWN
 		Global.TextType.SELECT:
 			return Action.SELECT
+		Global.TextType.OPEN:
+			return Action.OPEN
 	
 	return Action.SIZE
 
@@ -148,6 +151,8 @@ func press_button(var button : int):
 					win()
 				Action.SELECT:
 					select()
+				Action.OPEN:
+					open()
 	
 
 # Move
@@ -176,3 +181,12 @@ func select():
 			if object.game_object_type == Global.GameObjectType.LEVEL_SELECT:
 				LevelHandler.select(object.level)
 				return
+
+# Open
+func open():
+	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
+		var pos_x = player.grid_x + player.direction_x
+		var pos_y = player.grid_y + player.direction_y
+		for object in GlobalGridMap.get_objects(pos_x, pos_y):
+			if object.game_object_type == Global.GameObjectType.DOOR:
+				object.kill()
