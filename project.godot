@@ -43,6 +43,8 @@ WorldObjects="*res://scripts/world_objects.gd"
 
 window/size/width=960
 window/size/height=512
+window/stretch/mode="2d"
+window/stretch/aspect="keep"
 
 [input]
 
