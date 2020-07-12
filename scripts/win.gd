@@ -7,6 +7,8 @@ const duration : float = 3.0
 
 var win_stage : int = 0
 
+var playback_position
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -30,6 +32,7 @@ func _process(delta):
 		visible = false
 		win_stage = 0
 		get_node("PurrPlayer").stop()
+		get_node("MusicPlayer").play(playback_position)
 
 # Win the level.
 func win(var cat_version : int):
@@ -39,3 +42,5 @@ func win(var cat_version : int):
 		win_stage = 1
 		wait = 0.0
 		get_node("MeowPlayer").play()
+		playback_position = get_node("MusicPlayer").get_playback_position()
+		get_node("MusicPlayer").stop()

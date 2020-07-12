@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://graphics/pet/pet_bg.png" type="Texture" id=1]
 [ext_resource path="res://graphics/pet/hand4.png" type="Texture" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://scripts/win.gd" type="Script" id=17]
 [ext_resource path="res://sound_effects/meow.ogg" type="AudioStream" id=18]
 [ext_resource path="res://sound_effects/purr.ogg" type="AudioStream" id=19]
+[ext_resource path="res://music/darkest-child-by-kevin-macleod.ogg" type="AudioStream" id=20]
 
 [sub_resource type="SpriteFrames" id=3]
 animations = [ {
@@ -50,7 +51,7 @@ centered = false
 
 [node name="Petting" type="AnimatedSprite" parent="."]
 frames = SubResource( 2 )
-frame = 5
+frame = 4
 playing = true
 centered = false
 
@@ -59,3 +60,7 @@ stream = ExtResource( 18 )
 
 [node name="PurrPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 19 )
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 20 )
+autoplay = true
