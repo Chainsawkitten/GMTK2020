@@ -7,7 +7,8 @@ var grid_width = 30
 # An object in the grid. Contains the object's state.
 class CellObject:
 	var object : GameObject
-	# TODO Direction
+	var direction_x : int
+	var direction_y : int
 
 var grid: Array
 
@@ -31,6 +32,8 @@ func outside_grid(var x:int, var y:int):
 func add(object, var x:int, var y:int):
 	var cell = CellObject.new()
 	cell.object = object
+	cell.direction_x = object.direction_x
+	cell.direction_y = object.direction_y
 	grid[grid_width * y + x].push_back(cell)
 
 # Remove an object from the grid.
@@ -205,7 +208,10 @@ func restore_state():
 	var undo_frame = grid_undo_frames[undo_frame_index]
 	
 	# Set (non-position) state of all objects. eg. direction
-	# TODO
+	for k in range(undo_frame.size()):
+		for cell_object in undo_frame[k]:
+			cell_object.object.direction_x = cell_object.direction_x
+			cell_object.object.direction_y = cell_object.direction_y
 	
 	# diff undo frame against grid
 	var diff_add = []

@@ -124,7 +124,8 @@ func press_button(var button : int):
 # Move
 func move(var x : int, var y : int):
 	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
-		# TODO Change directions (player sprite).
+		player.direction_x = x
+		player.direction_y = y
 		
 		if GlobalGridMap.can_move_into(player.grid_x + x, player.grid_y + y, x, y):
 			GlobalGridMap.push(player.grid_x + x, player.grid_y + y, x, y)

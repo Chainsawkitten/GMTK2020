@@ -1,25 +1,21 @@
 [gd_scene load_steps=8 format=2]
 
-[ext_resource path="res://scripts/game_object.gd" type="Script" id=1]
+[ext_resource path="res://scripts/direction_frame.gd" type="Script" id=1]
 [ext_resource path="res://graphics/witch.png" type="Texture" id=2]
 
 [sub_resource type="AtlasTexture" id=1]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=2]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 32, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=3]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 64, 32, 32 )
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 96, 32, 32 )
 
@@ -34,8 +30,6 @@ animations = [ {
 [node name="Player" type="Node2D"]
 script = ExtResource( 1 )
 game_object_type = 2
-is_pushable = false
-is_barrier = false
 
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 frames = SubResource( 5 )

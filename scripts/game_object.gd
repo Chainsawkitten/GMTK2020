@@ -7,6 +7,9 @@ export var game_object_type : int = 0
 export var is_pushable: bool = true
 export var is_barrier: bool = true
 
+export var direction_x : int = 0
+export var direction_y : int = 1
+
 var grid_x : int
 var grid_y : int
 
