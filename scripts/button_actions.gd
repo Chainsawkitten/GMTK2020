@@ -132,8 +132,8 @@ func move(var x : int, var y : int):
 
 # Die
 func die():
-	# TODO
-	print("die")
+	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
+		player.kill()
 
 # Win
 func win():

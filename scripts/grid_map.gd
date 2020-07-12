@@ -4,8 +4,14 @@ extends Node
 var grid_height = 16
 var grid_width = 30
 
+# An object in the grid. Contains the object's state.
+class CellObject:
+	var object : GameObject
+	# TODO Direction
+
 var grid: Array
 
+# Undo / redo functionality.
 var grid_undo_frames: Array
 var undo_frame_index: int = -1
 
@@ -17,50 +23,74 @@ func _init():
 func _ready():
 	call_deferred("save_state")
 
+# Get whether the given position is outside the grid.
 func outside_grid(var x:int, var y:int):
 	return x < 0 || x >= grid_width || y < 0 || y >= grid_height
 
+# Add an object to the grid.
 func add(object, var x:int, var y:int):
-	grid[grid_width * y + x].push_back(object)
+	var cell = CellObject.new()
+	cell.object = object
+	grid[grid_width * y + x].push_back(cell)
 
+# Remove an object from the grid.
 func remove(object):
-	grid[grid_width * object.grid_y + object.grid_x].erase(object)
+	var cell_objects = grid[grid_width * object.grid_y + object.grid_x]
+	var index = -1
+	for i in range(cell_objects.size()):
+		if cell_objects[i].object == object:
+			index = i
+	
+	if index != -1:
+		cell_objects[index] = cell_objects[cell_objects.size() - 1]
+		cell_objects.resize(cell_objects.size() - 1)
 
+# Clear the grid.
 func clear_grid():
 	for k in range(grid.size()):
 		grid[k] = Array()
 	grid_undo_frames.clear()
 	undo_frame_index = -1
 
+# Get all objects at a given position.
 func get_objects(var x:int, var y:int):
 	if outside_grid(x, y):
 		return []
 	
-	return grid[grid_width * y + x]
+	var objects = []
+	
+	for cell_object in grid[grid_width * y + x]:
+		objects.push_back(cell_object.object)
+	
+	return objects
 
+# Get all objects of a certain type.
 # type: GameObjectType
 func get_objects_by_type(type: int):
 	var objects = []
 	for cell in grid:
-		for object in cell:
-			if type == object.game_object_type:
-				objects.push_back(object)
+		for cell_object in cell:
+			if type == cell_object.object.game_object_type:
+				objects.push_back(cell_object.object)
 	return objects
 
+# Get all text objects of a certain type.
 # text_type: TextType
 func get_text_by_type(text_type: int):
 	var objects = []
 	for cell in grid:
-		for object in cell:
-			if object is Text && object.text_type == text_type:
-				objects.push_back(object)
+		for cell_object in cell:
+			if cell_object.object is Text && cell_object.object.text_type == text_type:
+				objects.push_back(cell_object.object)
 	return objects
 
+# Move an object in the grid.
 func move_object(var from_x:int, var from_y:int, var to_x:int, var to_y:int, var object):
-	grid[grid_width * from_y + from_x].erase(object)
-	grid[grid_width * to_y + to_x].push_back(object)
+	remove(object)
+	add(object, to_x, to_y)
 	object.move(to_x, to_y)
 
+# Get whether a position can be moved into.
 func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(to_x, to_y):
 		return false
@@ -78,6 +108,7 @@ func can_move_into(var to_x:int, var to_y:int, var direction_x:int, var directio
 		return can_push(to_x, to_y, direction_x, direction_y)
 	return true
 
+# Get whether a position can be pushed from a given direction.
 func can_push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:int):
 	if outside_grid(from_x, from_y):
 		return false
@@ -113,7 +144,7 @@ func push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:i
 	for object in cell:
 		# Implicit from precondition can_push
 		assert(not object.is_barrier || object.is_pushable)
-		# Assumtion
+		# Assumption
 		assert(!(not object.is_barrier && object.is_pushable))
 		if object.is_pushable:
 			any_pushable = true
@@ -126,12 +157,11 @@ func push(var from_x:int, var from_y:int, var direction_x:int, var direction_y:i
 		for object in cell:
 			if object.is_pushable:
 				move_object(from_x, from_y, to_x, to_y, object)
-				
 
 
 
 
-
+# Save the current state of the grid.
 func save_state():
 	# var undo_frame = Array()
 	# undo_frame.resize(grid.size())
@@ -147,7 +177,7 @@ func save_state():
 	# update undo frame index
 	undo_frame_index = grid_undo_frames.size() - 1;
 
-
+# Undo the last turn.
 func undo():
 	if undo_frame_index <= 0:
 		# At oldest state, cannot undo more
@@ -157,6 +187,7 @@ func undo():
 	restore_state()
 	return true
 
+# Redo an undid turn.
 func redo():
 	var last_frame_index = grid_undo_frames.size() - 1
 	if undo_frame_index >= last_frame_index:
@@ -167,19 +198,35 @@ func redo():
 	restore_state()
 	return true
 
+# Restore the state.
 func restore_state():
+	# TODO Fix this
 	# Get undo frame to restore
 	var undo_frame = grid_undo_frames[undo_frame_index]
+	
+	# Set (non-position) state of all objects. eg. direction
+	# TODO
+	
 	# diff undo frame against grid
 	var diff_add = []
 	var diff_remove = []
 	for k in range(grid.size()):
-		for object in grid[k]:
-			if not undo_frame[k].has(object):
-				diff_remove.push_back(object);
-		for object in undo_frame[k]:
-			if not grid[k].has(object):
-				diff_add.push_back(object);
+		for cell_object in grid[k]:
+			# Check if undo frame has the object in the same position.
+			var found : bool = false
+			for undo_object in undo_frame[k]:
+				if undo_object.object == cell_object.object:
+					found = true
+			if !found:
+				diff_remove.push_back(cell_object.object)
+		for cell_object in undo_frame[k]:
+			# Check if the grid has the object in the same position.
+			var found : bool = false
+			for grid_object in grid[k]:
+				if grid_object.object == cell_object.object:
+					found = true
+			if !found:
+				diff_add.push_back(cell_object.object)
 
 	# Find what objects are moved, added, and removed
 	var moved = []
@@ -196,21 +243,19 @@ func restore_state():
 			removed.push_back(object)
 
 	# restore grid to old state
-	grid = undo_frame.duplicate(true)
+	grid =  undo_frame.duplicate(true)
 
 	# notify all moved, added, and removed objects about their new status
+	for object in added:
+		object.appear()
+	
+	for object in removed:
+		object.disappear()
+	
 	for k in range(grid.size()):
 		# k = grid_width * y + x
 		var x = k % grid_width
 		var y = k / grid_width
 
-		for object in grid[k]:
-			if moved.has(object):
-				object.move(x, y)
-			elif added.has(object):
-				object.move(x, y)
-				object.appear()
-			elif removed.has(object):
-				object.move(x, y)
-				object.disappear()
-
+		for cell_object in grid[k]:
+			cell_object.object.move(x, y)

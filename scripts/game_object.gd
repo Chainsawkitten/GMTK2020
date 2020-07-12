@@ -44,10 +44,19 @@ func move(var x:int, var y:int):
 
 # When the object is created or undo destruction
 func appear():
-	pass # TODO
+	# TODO Inverse poof?
+	visible = true
 
 # When the object is destroyed or undo creation
 func disappear():
-	pass # TODO
+	# Play poof.
+	var poof = load("scenes/effects/poof.tscn").instance()
+	poof.position = target_position + Vector2(Global.cell_size / 2, Global.cell_size / 2)
+	get_parent().call_deferred("add_child", poof)
+	visible = false
 
+# Destroy the object.
+func kill():
+	GlobalGridMap.remove(self)
+	disappear()
 
