@@ -25,6 +25,7 @@ enum Action {
 	MOVE_RIGHT,
 	MOVE_DOWN,
 	WIN, # First non-special order action.
+	TURN,
 	SELECT,
 	OPEN,
 	SMASH,
@@ -109,6 +110,8 @@ func text_type_to_action(var text_type : int) -> int:
 			return Action.MOVE_RIGHT
 		Global.TextType.MOVE_DOWN:
 			return Action.MOVE_DOWN
+		Global.TextType.TURN:
+			return Action.TURN
 		Global.TextType.SELECT:
 			return Action.SELECT
 		Global.TextType.OPEN:
@@ -155,6 +158,8 @@ func press_button(var button : int):
 			match i:
 				Action.WIN:
 					win()
+				Action.TURN:
+					turn()
 				Action.SELECT:
 					select()
 				Action.OPEN:
@@ -191,6 +196,34 @@ func select():
 			if object.game_object_type == Global.GameObjectType.LEVEL_SELECT:
 				LevelHandler.select(object.level)
 				return
+
+# Turn
+func turn():
+	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
+		if player.direction_x == -1 and player.direction_y == 0:
+			player.direction_x = 0
+			player.direction_y = -1
+		elif player.direction_x == 1 and player.direction_y == 0:
+			player.direction_x = 0
+			player.direction_y = 1
+		elif player.direction_x == 0 and player.direction_y == -1:
+			player.direction_x = 1
+			player.direction_y = 0
+		elif player.direction_x == 0 and player.direction_y == 1:
+			player.direction_x = -1
+			player.direction_y = 0
+		elif player.direction_x == -1 and player.direction_y == -1:
+			player.direction_x = 1
+			player.direction_y = -1
+		elif player.direction_x == 1 and player.direction_y == -1:
+			player.direction_x = 1
+			player.direction_y = 1
+		elif player.direction_x == -1 and player.direction_y == 1:
+			player.direction_x = -1
+			player.direction_y = -1
+		elif player.direction_x == 1 and player.direction_y == 1:
+			player.direction_x = -1
+			player.direction_y = 1
 
 # Open
 func open():
