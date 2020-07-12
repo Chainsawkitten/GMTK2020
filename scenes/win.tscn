@@ -21,7 +21,7 @@
 [ext_resource path="res://sound_effects/purr.ogg" type="AudioStream" id=19]
 [ext_resource path="res://music/darkest-child-by-kevin-macleod.ogg" type="AudioStream" id=20]
 
-[sub_resource type="SpriteFrames" id=3]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 14 ), ExtResource( 15 ), ExtResource( 13 ), ExtResource( 16 ), ExtResource( 12 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 9 ) ],
 "loop": true,
@@ -46,7 +46,7 @@ centered = false
 
 [node name="Cat" type="AnimatedSprite" parent="."]
 position = Vector2( 304, 346 )
-frames = SubResource( 3 )
+frames = SubResource( 1 )
 centered = false
 
 [node name="Petting" type="AnimatedSprite" parent="."]
@@ -63,4 +63,5 @@ stream = ExtResource( 19 )
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 20 )
+volume_db = -4.039
 autoplay = true
