@@ -40,3 +40,12 @@ enum TextType {
 }
 
 const cell_size : int = 32
+
+var last_was_gamepad = false
+
+func _input(event):
+	if event is InputEventKey:
+		last_was_gamepad = false
+	
+	if event is InputEventJoypadButton:
+		last_was_gamepad = true
