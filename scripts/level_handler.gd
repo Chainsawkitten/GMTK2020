@@ -43,6 +43,7 @@ func create_overworld_levels(var parent : LevelDescription):
 	create_leaf_level(overworld, "level_die")
 	create_leaf_level(overworld, "level_not_die")
 	create_leaf_level(overworld, "directional_movement")
+	create_leaf_level(overworld, "croco_dash")
 	
 	parent.children.push_back(overworld)
 
@@ -72,7 +73,7 @@ func create_leaf_level(var parent : LevelDescription, var name : String):
 # Select a level to play.
 func select(var level_index : int):
 	if level_index < current_level.children.size():
-		play_level(current_level.children[level_index])
+		call_deferred("play_level", current_level.children[level_index])
 
 # Win the current level.
 func win():
@@ -105,3 +106,5 @@ func play_level(var level : LevelDescription):
 	# Load new level.
 	var new_level = load("scenes/levels/" + level.name + ".tscn").instance()
 	game_node.add_child(new_level)
+	
+	TurnHandler.reread_button_actions()
