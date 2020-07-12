@@ -1,0 +1,968 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://scenes/game_objects/player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_objects/text/button_b.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game_objects/text/button_a.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_objects/text/walk_up.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game_objects/text/walk_right.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/game_objects/text/button_y.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/game_objects/lava.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/game_objects/text/walk_left.tscn" type="PackedScene" id=10]
+
+[node name="Level" type="Node2D"]
+
+[node name="Lava" type="Node2D" parent="."]
+
+[node name="Lava" parent="Lava" instance=ExtResource( 9 )]
+
+[node name="Lava2" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 0 )
+
+[node name="Lava3" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 32 )
+
+[node name="Lava4" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 32 )
+
+[node name="Lava5" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 64 )
+
+[node name="Lava6" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 96 )
+
+[node name="Lava7" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 128 )
+
+[node name="Lava8" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 160 )
+
+[node name="Lava9" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 192 )
+
+[node name="Lava10" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 224 )
+
+[node name="Lava11" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 256 )
+
+[node name="Lava12" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 288 )
+
+[node name="Lava13" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 320 )
+
+[node name="Lava14" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 352 )
+
+[node name="Lava15" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 384 )
+
+[node name="Lava16" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 416 )
+
+[node name="Lava17" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 448 )
+
+[node name="Lava18" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 0, 480 )
+
+[node name="Lava19" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 480 )
+
+[node name="Lava20" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 448 )
+
+[node name="Lava21" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 416 )
+
+[node name="Lava22" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 384 )
+
+[node name="Lava23" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 352 )
+
+[node name="Lava24" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 320 )
+
+[node name="Lava25" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 288 )
+
+[node name="Lava26" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 256 )
+
+[node name="Lava27" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 224 )
+
+[node name="Lava28" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 192 )
+
+[node name="Lava29" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 160 )
+
+[node name="Lava30" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 128 )
+
+[node name="Lava31" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 96 )
+
+[node name="Lava32" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 32, 64 )
+
+[node name="Lava33" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 0 )
+
+[node name="Lava34" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 32 )
+
+[node name="Lava79" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 0 )
+
+[node name="Lava80" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 32 )
+
+[node name="Lava81" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 0 )
+
+[node name="Lava82" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 32 )
+
+[node name="Lava35" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 64 )
+
+[node name="Lava36" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 96 )
+
+[node name="Lava37" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 128 )
+
+[node name="Lava38" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 160 )
+
+[node name="Lava39" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 224 )
+
+[node name="Lava40" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 192 )
+
+[node name="Lava41" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 256 )
+
+[node name="Lava42" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 288 )
+
+[node name="Lava43" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 352 )
+
+[node name="Lava44" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 320 )
+
+[node name="Lava45" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 384 )
+
+[node name="Lava46" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 416 )
+
+[node name="Lava47" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 448 )
+
+[node name="Lava48" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 64, 480 )
+
+[node name="Lava49" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 480 )
+
+[node name="Lava50" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 480 )
+
+[node name="Lava51" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 448 )
+
+[node name="Lava52" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 448 )
+
+[node name="Lava53" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 416 )
+
+[node name="Lava54" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 416 )
+
+[node name="Lava55" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 384 )
+
+[node name="Lava56" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 384 )
+
+[node name="Lava57" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 352 )
+
+[node name="Lava58" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 352 )
+
+[node name="Lava59" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 320 )
+
+[node name="Lava60" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 320 )
+
+[node name="Lava61" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 288 )
+
+[node name="Lava62" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 288 )
+
+[node name="Lava63" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 288 )
+
+[node name="Lava64" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 256 )
+
+[node name="Lava65" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 256 )
+
+[node name="Lava66" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 224 )
+
+[node name="Lava67" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 224 )
+
+[node name="Lava68" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 192 )
+
+[node name="Lava69" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 192 )
+
+[node name="Lava70" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 160 )
+
+[node name="Lava71" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 160 )
+
+[node name="Lava72" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 128 )
+
+[node name="Lava73" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 128 )
+
+[node name="Lava74" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 96 )
+
+[node name="Lava75" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 96 )
+
+[node name="Lava76" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 128, 64 )
+
+[node name="Lava77" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 64 )
+
+[node name="Lava78" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 96, 64 )
+
+[node name="Lava237" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 0 )
+
+[node name="Lava238" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 32 )
+
+[node name="Lava239" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 0 )
+
+[node name="Lava240" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 32 )
+
+[node name="Lava241" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 0 )
+
+[node name="Lava242" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 32 )
+
+[node name="Lava243" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 64 )
+
+[node name="Lava244" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 96 )
+
+[node name="Lava245" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 128 )
+
+[node name="Lava246" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 160 )
+
+[node name="Lava247" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 224 )
+
+[node name="Lava248" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 192 )
+
+[node name="Lava249" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 256 )
+
+[node name="Lava250" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 288 )
+
+[node name="Lava251" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 352 )
+
+[node name="Lava252" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 320 )
+
+[node name="Lava253" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 384 )
+
+[node name="Lava254" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 416 )
+
+[node name="Lava255" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 448 )
+
+[node name="Lava256" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 160, 480 )
+
+[node name="Lava257" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 480 )
+
+[node name="Lava258" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 480 )
+
+[node name="Lava259" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 448 )
+
+[node name="Lava260" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 448 )
+
+[node name="Lava261" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 416 )
+
+[node name="Lava262" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 416 )
+
+[node name="Lava263" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 384 )
+
+[node name="Lava264" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 384 )
+
+[node name="Lava265" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 352 )
+
+[node name="Lava266" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 352 )
+
+[node name="Lava267" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 320 )
+
+[node name="Lava268" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 320 )
+
+[node name="Lava270" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 288 )
+
+[node name="Lava271" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 288 )
+
+[node name="Lava273" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 256 )
+
+[node name="Lava274" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 224 )
+
+[node name="Lava276" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 192 )
+
+[node name="Lava277" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 192 )
+
+[node name="Lava278" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 160 )
+
+[node name="Lava279" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 160 )
+
+[node name="Lava280" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 128 )
+
+[node name="Lava281" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 128 )
+
+[node name="Lava282" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 96 )
+
+[node name="Lava283" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 96 )
+
+[node name="Lava284" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 224, 64 )
+
+[node name="Lava285" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 64 )
+
+[node name="Lava286" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 192, 64 )
+
+[node name="Lava83" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 32 )
+
+[node name="Lava84" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 32 )
+
+[node name="Lava85" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 64 )
+
+[node name="Lava86" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 96 )
+
+[node name="Lava87" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 128 )
+
+[node name="Lava88" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 160 )
+
+[node name="Lava89" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 192 )
+
+[node name="Lava90" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 0 )
+
+[node name="Lava91" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 256 )
+
+[node name="Lava92" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 288 )
+
+[node name="Lava93" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 320 )
+
+[node name="Lava94" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 352 )
+
+[node name="Lava95" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 384 )
+
+[node name="Lava96" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 416 )
+
+[node name="Lava97" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 448 )
+
+[node name="Lava98" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 800, 480 )
+
+[node name="Lava99" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 480 )
+
+[node name="Lava100" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 448 )
+
+[node name="Lava101" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 416 )
+
+[node name="Lava102" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 384 )
+
+[node name="Lava103" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 352 )
+
+[node name="Lava104" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 320 )
+
+[node name="Lava105" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 288 )
+
+[node name="Lava106" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 256 )
+
+[node name="Lava107" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 0 )
+
+[node name="Lava108" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 192 )
+
+[node name="Lava109" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 160 )
+
+[node name="Lava110" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 128 )
+
+[node name="Lava111" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 96 )
+
+[node name="Lava112" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 832, 64 )
+
+[node name="Lava113" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 32 )
+
+[node name="Lava114" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 32 )
+
+[node name="Lava115" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 32 )
+
+[node name="Lava116" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 64 )
+
+[node name="Lava117" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 96 )
+
+[node name="Lava118" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 128 )
+
+[node name="Lava119" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 160 )
+
+[node name="Lava120" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 0 )
+
+[node name="Lava121" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 192 )
+
+[node name="Lava122" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 256 )
+
+[node name="Lava123" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 288 )
+
+[node name="Lava124" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 352 )
+
+[node name="Lava125" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 320 )
+
+[node name="Lava126" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 384 )
+
+[node name="Lava127" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 416 )
+
+[node name="Lava128" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 448 )
+
+[node name="Lava129" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 864, 480 )
+
+[node name="Lava130" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 480 )
+
+[node name="Lava131" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 480 )
+
+[node name="Lava132" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 448 )
+
+[node name="Lava133" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 448 )
+
+[node name="Lava134" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 416 )
+
+[node name="Lava135" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 416 )
+
+[node name="Lava136" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 384 )
+
+[node name="Lava137" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 384 )
+
+[node name="Lava138" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 352 )
+
+[node name="Lava139" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 352 )
+
+[node name="Lava140" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 320 )
+
+[node name="Lava141" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 320 )
+
+[node name="Lava142" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 288 )
+
+[node name="Lava143" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 288 )
+
+[node name="Lava144" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 288 )
+
+[node name="Lava145" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 256 )
+
+[node name="Lava146" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 256 )
+
+[node name="Lava147" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 0 )
+
+[node name="Lava148" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 0 )
+
+[node name="Lava149" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 192 )
+
+[node name="Lava150" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 192 )
+
+[node name="Lava151" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 160 )
+
+[node name="Lava152" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 160 )
+
+[node name="Lava153" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 128 )
+
+[node name="Lava154" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 128 )
+
+[node name="Lava155" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 96 )
+
+[node name="Lava156" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 96 )
+
+[node name="Lava157" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 928, 64 )
+
+[node name="Lava158" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 64 )
+
+[node name="Lava159" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 896, 64 )
+
+[node name="Lava160" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 32 )
+
+[node name="Lava161" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 32 )
+
+[node name="Lava162" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 64 )
+
+[node name="Lava163" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 96 )
+
+[node name="Lava167" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 0 )
+
+[node name="Lava173" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 416 )
+
+[node name="Lava174" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 448 )
+
+[node name="Lava175" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 640, 480 )
+
+[node name="Lava176" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 480 )
+
+[node name="Lava177" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 448 )
+
+[node name="Lava178" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 416 )
+
+[node name="Lava179" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 384 )
+
+[node name="Lava180" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 352 )
+
+[node name="Lava181" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 320 )
+
+[node name="Lava182" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 288 )
+
+[node name="Lava183" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 256 )
+
+[node name="Lava307" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 256, 480 )
+
+[node name="Lava308" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 288, 480 )
+
+[node name="Lava309" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 256, 0 )
+
+[node name="Lava311" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 256, 32 )
+
+[node name="Lava312" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 608, 32 )
+
+[node name="Lava313" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 608, 448 )
+
+[node name="Lava314" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 256, 448 )
+
+[node name="Lava310" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 288, 0 )
+
+[node name="Lava184" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 0 )
+
+[node name="Lava185" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 192 )
+
+[node name="Lava186" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 160 )
+
+[node name="Lava187" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 128 )
+
+[node name="Lava188" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 96 )
+
+[node name="Lava189" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 672, 64 )
+
+[node name="Lava190" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 32 )
+
+[node name="Lava191" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 32 )
+
+[node name="Lava192" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 32 )
+
+[node name="Lava193" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 64 )
+
+[node name="Lava194" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 96 )
+
+[node name="Lava195" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 128 )
+
+[node name="Lava196" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 160 )
+
+[node name="Lava197" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 0 )
+
+[node name="Lava198" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 192 )
+
+[node name="Lava199" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 256 )
+
+[node name="Lava200" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 288 )
+
+[node name="Lava201" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 352 )
+
+[node name="Lava202" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 320 )
+
+[node name="Lava203" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 384 )
+
+[node name="Lava204" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 416 )
+
+[node name="Lava205" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 448 )
+
+[node name="Lava206" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 704, 480 )
+
+[node name="Lava207" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 480 )
+
+[node name="Lava208" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 480 )
+
+[node name="Lava209" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 448 )
+
+[node name="Lava210" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 448 )
+
+[node name="Lava211" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 416 )
+
+[node name="Lava212" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 416 )
+
+[node name="Lava213" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 384 )
+
+[node name="Lava214" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 384 )
+
+[node name="Lava215" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 352 )
+
+[node name="Lava216" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 352 )
+
+[node name="Lava217" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 320 )
+
+[node name="Lava218" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 320 )
+
+[node name="Lava219" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 288 )
+
+[node name="Lava220" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 288 )
+
+[node name="Lava221" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 288 )
+
+[node name="Lava222" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 256 )
+
+[node name="Lava223" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 256 )
+
+[node name="Lava224" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 0 )
+
+[node name="Lava225" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 0 )
+
+[node name="Lava287" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 480, 0 )
+
+[node name="Lava288" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 512, 0 )
+
+[node name="Lava289" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 544, 0 )
+
+[node name="Lava290" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 576, 0 )
+
+[node name="Lava291" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 608, 0 )
+
+[node name="Lava292" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 320, 0 )
+
+[node name="Lava293" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 352, 0 )
+
+[node name="Lava294" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 384, 0 )
+
+[node name="Lava295" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 416, 0 )
+
+[node name="Lava296" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 448, 0 )
+
+[node name="Lava297" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 480, 480 )
+
+[node name="Lava298" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 512, 480 )
+
+[node name="Lava299" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 544, 480 )
+
+[node name="Lava300" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 576, 480 )
+
+[node name="Lava301" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 608, 480 )
+
+[node name="Lava302" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 320, 480 )
+
+[node name="Lava303" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 352, 480 )
+
+[node name="Lava304" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 384, 480 )
+
+[node name="Lava305" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 416, 480 )
+
+[node name="Lava306" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 448, 480 )
+
+[node name="Lava226" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 192 )
+
+[node name="Lava227" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 192 )
+
+[node name="Lava228" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 160 )
+
+[node name="Lava229" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 160 )
+
+[node name="Lava230" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 128 )
+
+[node name="Lava231" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 128 )
+
+[node name="Lava232" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 96 )
+
+[node name="Lava233" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 96 )
+
+[node name="Lava234" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 768, 64 )
+
+[node name="Lava235" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 64 )
+
+[node name="Lava236" parent="Lava" instance=ExtResource( 9 )]
+position = Vector2( 736, 64 )
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="Is" parent="Text" instance=ExtResource( 4 )]
+position = Vector2( 352, 160 )
+
+[node name="Is2" parent="Text" instance=ExtResource( 4 )]
+position = Vector2( 544, 160 )
+
+[node name="Is3" parent="Text" instance=ExtResource( 4 )]
+position = Vector2( 544, 288 )
+
+[node name="Is4" parent="Text" instance=ExtResource( 4 )]
+position = Vector2( 352, 288 )
+
+[node name="ButtonA" parent="Text" instance=ExtResource( 3 )]
+position = Vector2( 320, 160 )
+
+[node name="ButtonB" parent="Text" instance=ExtResource( 2 )]
+position = Vector2( 512, 160 )
+
+[node name="ButtonY" parent="Text" instance=ExtResource( 8 )]
+position = Vector2( 512, 288 )
+
+[node name="WalkLeft" parent="Text" instance=ExtResource( 10 )]
+position = Vector2( 384, 160 )
+
+[node name="WalkUp" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 576, 160 )
+
+[node name="ButtonY2" parent="Text" instance=ExtResource( 8 )]
+position = Vector2( 320, 288 )
+
+[node name="WalkUp2" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 384, 288 )
+
+[node name="WalkRight" parent="Text" instance=ExtResource( 7 )]
+position = Vector2( 576, 288 )
+
+[node name="Cat" parent="." instance=ExtResource( 5 )]
+position = Vector2( 896, 224 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 448, 288 )
