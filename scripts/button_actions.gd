@@ -183,6 +183,8 @@ func move(var x : int, var y : int):
 		if GlobalGridMap.can_move_into(player.grid_x + x, player.grid_y + y, x, y):
 			GlobalGridMap.push(player.grid_x + x, player.grid_y + y, x, y)
 			GlobalGridMap.move_object(player.grid_x, player.grid_y, player.grid_x + x, player.grid_y + y, player)
+		else:
+			GlobalGridMap.update_object(player)
 
 # Die
 func die():
@@ -228,6 +230,8 @@ func turn():
 		elif player.direction_x == 1 and player.direction_y == 1:
 			player.direction_x = -1
 			player.direction_y = 1
+		
+		GlobalGridMap.update_object(player)
 
 # Open
 func open():

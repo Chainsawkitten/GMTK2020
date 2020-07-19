@@ -21,9 +21,6 @@ func _init():
 	grid.resize(grid_height * grid_width)
 	clear_grid()
 
-func _ready():
-	call_deferred("save_state")
-
 # Get whether the given position is outside the grid.
 func outside_grid(var x:int, var y:int):
 	return x < 0 || x >= grid_width || y < 0 || y >= grid_height
@@ -47,6 +44,17 @@ func remove(object):
 	if index != -1:
 		cell_objects[index] = cell_objects[cell_objects.size() - 1]
 		cell_objects.resize(cell_objects.size() - 1)
+
+# Update an object's non-positional state.
+func update_object(object):
+	var cell_objects = grid[grid_width * object.grid_y + object.grid_x]
+	for i in range(cell_objects.size()):
+		if cell_objects[i].object == object:
+			var cell = CellObject.new()
+			cell.object = object
+			cell.direction_x = object.direction_x
+			cell.direction_y = object.direction_y
+			cell_objects[i] = cell
 
 # Clear the grid.
 func clear_grid():
