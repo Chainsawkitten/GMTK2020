@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/levels/overworld/level0.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/win.tscn" type="PackedScene" id=2]
 [ext_resource path="res://graphics/menu.png" type="Texture" id=3]
 [ext_resource path="res://scripts/button_frame.gd" type="Script" id=4]
+[ext_resource path="res://scripts/hide_return_to_map.gd" type="Script" id=5]
 
 [sub_resource type="AtlasTexture" id=1]
 flags = 4
@@ -41,3 +42,9 @@ frames = SubResource( 3 )
 animation = "New Anim"
 centered = false
 script = ExtResource( 4 )
+
+[node name="HideReturnToMap" type="Polygon2D" parent="PauseMenu"]
+position = Vector2( 172, 166 )
+color = Color( 0, 0, 0, 1 )
+polygon = PoolVector2Array( -32, 32, 320, 32, 320.4, -44.7797, -32.6144, -39.1674 )
+script = ExtResource( 5 )

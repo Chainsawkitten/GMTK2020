@@ -8,6 +8,9 @@ class LevelDescription:
 	# Whether the level has been beaten.
 	var beaten : bool = false
 	
+	# Whether the level has been reached (attempted).
+	var reached : bool = false
+	
 	# The level's child levels.
 	var children = []
 	
@@ -101,6 +104,10 @@ func win():
 	
 	return_to_parent()
 
+# Check whether the player can return to the parent through the menu.
+func parent_is_reached():
+	return current_level.parent != null and current_level.parent.reached
+
 # Return to the parent level.
 func return_to_parent():
 	if current_level.parent != null:
@@ -115,6 +122,7 @@ func play_level(var level : LevelDescription):
 	GlobalGridMap.clear_grid()
 	
 	current_level = level
+	level.reached = true
 	
 	# Load new level.
 	var new_level = load("scenes/levels/" + level.name + ".tscn").instance()

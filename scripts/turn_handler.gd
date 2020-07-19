@@ -46,10 +46,10 @@ func _process(delta):
 	var input : int = get_player_input()
 	
 	# If any input was performed, 
-	if (input != Press.NONE):
+	if input != Press.NONE:
 		wait_for_input = 0.0
 		
-		if (input == Press.MENU):
+		if input == Press.MENU:
 			if menu == null:
 				menu = get_node("/root/Game/PauseMenu")
 			if menu != null:
@@ -60,12 +60,13 @@ func _process(delta):
 					set_pause(not paused)
 		else:
 			if !paused:
-				if (input == Press.UNDO):
+				# Not in the menu, normal gameplay.
+				if input == Press.UNDO:
 					if GlobalGridMap.undo():
 						reread_button_actions()
 					else:
 						pass # TODO undo returns false when cannot undo more
-				elif (input == Press.REDO):
+				elif input == Press.REDO:
 					if GlobalGridMap.redo():
 						reread_button_actions()
 					else:
@@ -77,9 +78,14 @@ func _process(delta):
 						WorldObjects.update_world_objects()
 						reread_button_actions()
 						GlobalGridMap.save_state()
-			else: # paused
-				if (input == Press.BUTTON_Y):
+			else:
+				# In the menu.
+				if input == Press.BUTTON_Y:
 					GlobalGridMap.reset_action()
+					menu.visible = false
+					set_pause(false)
+				elif input == Press.BUTTON_X and LevelHandler.parent_is_reached():
+					LevelHandler.return_to_parent()
 					menu.visible = false
 					set_pause(false)
 
@@ -110,21 +116,6 @@ func get_player_input() -> int:
 				return Press.NONE
 	
 	return input
-
-# Open the menu.
-func open_menu():
-	# TODO
-	pass
-
-# Undo the last action.
-func undo():
-	# TODO
-	pass
-
-# Undo the last undid action...
-func redo():
-	# TODO
-	pass
 
 # Perform normal game input.
 func perform_normal_input(var input : int) -> bool:
