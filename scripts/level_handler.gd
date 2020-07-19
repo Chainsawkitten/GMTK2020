@@ -178,10 +178,10 @@ func load():
 	# Level information.
 	load_level(file, top_level)
 	
+	file.close()
+	
 	# Start from the overworld.
 	return_to_parent()
-	
-	file.close()
 
 # Save the state of a level to file.
 func save_level(var file : File, var level : LevelDescription):
