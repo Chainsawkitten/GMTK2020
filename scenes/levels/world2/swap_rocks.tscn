@@ -159,7 +159,7 @@ position = Vector2( 64, 288 )
 position = Vector2( 96, 224 )
 
 [node name="Rock36" parent="Rocks" instance=ExtResource( 5 )]
-position = Vector2( 800, 224 )
+position = Vector2( 704, 224 )
 
 [node name="Rock37" parent="Rocks" instance=ExtResource( 5 )]
 position = Vector2( 736, 352 )
@@ -315,7 +315,12 @@ position = Vector2( 768, 416 )
 position = Vector2( 448, 96 )
 
 [node name="Crocodile" parent="." instance=ExtResource( 2 )]
-position = Vector2( 864, 224 )
+position = Vector2( 800, 224 )
+direction_x = -1
+direction_y = 0
+
+[node name="Crocodile2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 832, 224 )
 direction_x = -1
 direction_y = 0
 
