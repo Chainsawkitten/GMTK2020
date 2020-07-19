@@ -30,6 +30,7 @@ enum Action {
 	OPEN,
 	SMASH,
 	SWAP,
+	PARTY,
 	SIZE
 }
 
@@ -116,10 +117,12 @@ func text_type_to_action(var text_type : int) -> int:
 			return Action.SELECT
 		Global.TextType.OPEN:
 			return Action.OPEN
-		Global.TextType.SWAP:
-			return Action.SWAP
 		Global.TextType.SMASH:
 			return Action.SMASH
+		Global.TextType.SWAP:
+			return Action.SWAP
+		Global.TextType.PARTY:
+			return Action.PARTY
 	
 	return Action.SIZE
 
@@ -171,6 +174,8 @@ func press_button(var button : int) -> bool:
 					swap()
 				Action.SMASH:
 					smash()
+				Action.PARTY:
+					party()
 	
 	return true
 
@@ -265,3 +270,10 @@ func smash():
 		for object in GlobalGridMap.get_objects(pos_x, pos_y):
 			if object.smashable:
 				object.kill()
+
+# Party
+func party():
+	for player in GlobalGridMap.get_objects_by_type(Global.GameObjectType.PLAYER):
+		var confetti = load("scenes/effects/confetti.tscn").instance()
+		confetti.position = player.position + Vector2(Global.cell_size / 2, Global.cell_size / 2)
+		player.get_parent().call_deferred("add_child", confetti)

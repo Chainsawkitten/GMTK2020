@@ -90,6 +90,10 @@ level = 4
 position = Vector2( 416, 224 )
 level = 5
 
+[node name="Level6" parent="Levels" instance=ExtResource( 12 )]
+position = Vector2( 480, 224 )
+level = 6
+
 [node name="Label2" type="Label" parent="."]
 margin_left = 64.0
 margin_top = 192.0
@@ -146,6 +150,16 @@ margin_top = 192.0
 margin_right = 480.0
 margin_bottom = 206.0
 text = "Smash"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="."]
+margin_left = 480.0
+margin_top = 192.0
+margin_right = 544.0
+margin_bottom = 206.0
+text = "Party"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,0 +1,470 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://scenes/game_objects/text/walk_down.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/game_objects/cat.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/game_objects/text/button_down.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/game_objects/player.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/game_objects/text/party.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/game_objects/specific_flower.tscn" type="PackedScene" id=7]
+
+[node name="Level" type="Node2D"]
+
+[node name="Decorations" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="Decorations"]
+
+[node name="RedFlower" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 64 )
+frame = 6
+
+[node name="RedFlower2" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 128, 64 )
+frame = 6
+
+[node name="RedFlower3" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 160, 64 )
+frame = 6
+
+[node name="RedFlower4" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 192, 64 )
+frame = 6
+
+[node name="RedFlower5" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 224, 64 )
+frame = 6
+
+[node name="RedFlower6" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 256, 64 )
+frame = 6
+
+[node name="RedFlower7" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 288, 64 )
+frame = 6
+
+[node name="RedFlower8" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 320, 64 )
+frame = 6
+
+[node name="RedFlower9" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 352, 64 )
+frame = 6
+
+[node name="RedFlower10" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 64 )
+frame = 6
+
+[node name="OrangeFlower" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 96 )
+frame = 3
+
+[node name="OrangeFlower2" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 128, 96 )
+frame = 3
+
+[node name="OrangeFlower3" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 160, 96 )
+frame = 3
+
+[node name="OrangeFlower4" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 192, 96 )
+frame = 3
+
+[node name="OrangeFlower5" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 224, 96 )
+frame = 3
+
+[node name="OrangeFlower6" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 256, 96 )
+frame = 3
+
+[node name="OrangeFlower7" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 288, 96 )
+frame = 3
+
+[node name="OrangeFlower8" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 320, 96 )
+frame = 3
+
+[node name="OrangeFlower9" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 352, 96 )
+frame = 3
+
+[node name="OrangeFlower10" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 96 )
+frame = 3
+
+[node name="YellowFlower" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 128 )
+
+[node name="YellowFlower2" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 128, 128 )
+
+[node name="YellowFlower3" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 160, 128 )
+
+[node name="YellowFlower4" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 192, 128 )
+
+[node name="YellowFlower5" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 224, 128 )
+
+[node name="YellowFlower6" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 256, 128 )
+
+[node name="YellowFlower7" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 288, 128 )
+
+[node name="YellowFlower8" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 320, 128 )
+
+[node name="YellowFlower9" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 352, 128 )
+
+[node name="YellowFlower10" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 128 )
+
+[node name="GreenFlower" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 160 )
+frame = 7
+
+[node name="GreenFlower2" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 128, 160 )
+frame = 7
+
+[node name="GreenFlower3" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 160, 160 )
+frame = 7
+
+[node name="GreenFlower4" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 192, 160 )
+frame = 7
+
+[node name="GreenFlower5" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 224, 160 )
+frame = 7
+
+[node name="GreenFlower6" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 256, 160 )
+frame = 7
+
+[node name="GreenFlower7" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 288, 160 )
+frame = 7
+
+[node name="GreenFlower8" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 320, 160 )
+frame = 7
+
+[node name="GreenFlower9" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 352, 160 )
+frame = 7
+
+[node name="GreenFlower10" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 160 )
+frame = 7
+
+[node name="BlueFlower" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 192 )
+frame = 4
+
+[node name="BlueFlower2" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 128, 192 )
+frame = 4
+
+[node name="BlueFlower3" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 160, 192 )
+frame = 4
+
+[node name="BlueFlower4" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 224, 192 )
+frame = 4
+
+[node name="BlueFlower5" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 192, 192 )
+frame = 4
+
+[node name="BlueFlower6" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 256, 192 )
+frame = 4
+
+[node name="BlueFlower7" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 288, 192 )
+frame = 4
+
+[node name="BlueFlower8" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 320, 192 )
+frame = 4
+
+[node name="BlueFlower9" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 352, 192 )
+frame = 4
+
+[node name="BlueFlower10" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 192 )
+frame = 4
+
+[node name="PurpleFlower" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 96, 224 )
+frame = 5
+
+[node name="PurpleFlower2" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 128, 224 )
+frame = 5
+
+[node name="PurpleFlower3" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 160, 224 )
+frame = 5
+
+[node name="PurpleFlower4" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 192, 224 )
+frame = 5
+
+[node name="PurpleFlower5" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 224, 224 )
+frame = 5
+
+[node name="PurpleFlower6" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 256, 224 )
+frame = 5
+
+[node name="PurpleFlower7" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 288, 224 )
+frame = 5
+
+[node name="PurpleFlower8" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 320, 224 )
+frame = 5
+
+[node name="PurpleFlower9" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 352, 224 )
+frame = 5
+
+[node name="PurpleFlower10" parent="Decorations/Node2D" instance=ExtResource( 7 )]
+position = Vector2( 384, 224 )
+frame = 5
+
+[node name="Node2D2" type="Node2D" parent="Decorations"]
+
+[node name="BlueFlower" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 512, 64 )
+frame = 4
+
+[node name="BlueFlower2" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 544, 64 )
+frame = 4
+
+[node name="BlueFlower3" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 576, 64 )
+frame = 4
+
+[node name="BlueFlower4" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 608, 64 )
+frame = 4
+
+[node name="BlueFlower5" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 640, 64 )
+frame = 4
+
+[node name="BlueFlower6" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 672, 64 )
+frame = 4
+
+[node name="BlueFlower7" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 704, 64 )
+frame = 4
+
+[node name="BlueFlower8" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 736, 64 )
+frame = 4
+
+[node name="BlueFlower9" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 768, 64 )
+frame = 4
+
+[node name="BlueFlower10" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 800, 64 )
+frame = 4
+
+[node name="BlueFlower11" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 512, 192 )
+frame = 4
+
+[node name="BlueFlower12" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 544, 192 )
+frame = 4
+
+[node name="BlueFlower13" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 576, 192 )
+frame = 4
+
+[node name="BlueFlower14" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 608, 192 )
+frame = 4
+
+[node name="BlueFlower15" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 640, 192 )
+frame = 4
+
+[node name="BlueFlower16" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 672, 192 )
+frame = 4
+
+[node name="BlueFlower17" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 704, 192 )
+frame = 4
+
+[node name="BlueFlower18" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 768, 192 )
+frame = 4
+
+[node name="BlueFlower19" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 736, 192 )
+frame = 4
+
+[node name="BlueFlower20" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 800, 192 )
+frame = 4
+
+[node name="PinkFlower" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 512, 96 )
+frame = 9
+
+[node name="PinkFlower2" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 544, 96 )
+frame = 9
+
+[node name="PinkFlower3" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 576, 96 )
+frame = 9
+
+[node name="PinkFlower4" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 608, 96 )
+frame = 9
+
+[node name="PinkFlower5" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 640, 96 )
+frame = 9
+
+[node name="PinkFlower6" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 672, 96 )
+frame = 9
+
+[node name="PinkFlower7" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 704, 96 )
+frame = 9
+
+[node name="PinkFlower8" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 736, 96 )
+frame = 9
+
+[node name="PinkFlower9" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 768, 96 )
+frame = 9
+
+[node name="PinkFlower10" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 800, 96 )
+frame = 9
+
+[node name="PinkFlower11" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 800, 160 )
+frame = 9
+
+[node name="PinkFlower12" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 768, 160 )
+frame = 9
+
+[node name="PinkFlower13" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 736, 160 )
+frame = 9
+
+[node name="PinkFlower14" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 672, 160 )
+frame = 9
+
+[node name="PinkFlower15" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 704, 160 )
+frame = 9
+
+[node name="PinkFlower16" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 640, 160 )
+frame = 9
+
+[node name="PinkFlower17" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 608, 160 )
+frame = 9
+
+[node name="PinkFlower18" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 576, 160 )
+frame = 9
+
+[node name="PinkFlower19" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 544, 160 )
+frame = 9
+
+[node name="PinkFlower20" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 512, 160 )
+frame = 9
+
+[node name="WhiteFlower" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 512, 128 )
+frame = 8
+
+[node name="WhiteFlower2" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 544, 128 )
+frame = 8
+
+[node name="WhiteFlower3" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 576, 128 )
+frame = 8
+
+[node name="WhiteFlower4" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 608, 128 )
+frame = 8
+
+[node name="WhiteFlower5" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 640, 128 )
+frame = 8
+
+[node name="WhiteFlower6" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 672, 128 )
+frame = 8
+
+[node name="WhiteFlower7" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 704, 128 )
+frame = 8
+
+[node name="WhiteFlower8" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 736, 128 )
+frame = 8
+
+[node name="WhiteFlower9" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 768, 128 )
+frame = 8
+
+[node name="WhiteFlower10" parent="Decorations/Node2D2" instance=ExtResource( 7 )]
+position = Vector2( 800, 128 )
+frame = 8
+
+[node name="Cat" parent="." instance=ExtResource( 3 )]
+position = Vector2( 448, 384 )
+
+[node name="Text" type="Node2D" parent="."]
+
+[node name="ButtonDown" parent="Text" instance=ExtResource( 4 )]
+position = Vector2( 736, 352 )
+
+[node name="Is" parent="Text" instance=ExtResource( 2 )]
+position = Vector2( 736, 384 )
+
+[node name="Is2" parent="Text" instance=ExtResource( 2 )]
+position = Vector2( 768, 352 )
+
+[node name="WalkDown" parent="Text" instance=ExtResource( 1 )]
+position = Vector2( 736, 416 )
+
+[node name="Party" parent="Text" instance=ExtResource( 6 )]
+position = Vector2( 800, 352 )
+
+[node name="Player" parent="." instance=ExtResource( 5 )]
+position = Vector2( 448, 64 )

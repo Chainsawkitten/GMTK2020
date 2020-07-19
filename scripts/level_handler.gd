@@ -81,6 +81,7 @@ func create_test_levels(var parent : LevelDescription):
 	create_leaf_level(test_levels, "test_door_level")
 	create_leaf_level(test_levels, "test_swap_level")
 	create_leaf_level(test_levels, "test_smash_level")
+	create_leaf_level(test_levels, "test_party")
 	
 	parent.children.push_back(test_levels)
 
