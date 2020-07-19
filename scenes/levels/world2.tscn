@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://scenes/game_objects/text/is.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/game_objects/text/button_left.tscn" type="PackedScene" id=2]
@@ -19,6 +19,7 @@
 [ext_resource path="res://scenes/game_objects/lava.tscn" type="PackedScene" id=17]
 [ext_resource path="res://scenes/game_objects/flower.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/game_objects/tree.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/game_objects/mushroom.tscn" type="PackedScene" id=20]
 
 [node name="Level" type="Node2D"]
 
@@ -143,6 +144,24 @@ position = Vector2( 832, 192 )
 
 [node name="Tree18" parent="Decorations" instance=ExtResource( 19 )]
 position = Vector2( 800, 192 )
+
+[node name="Mushroom" parent="Decorations" instance=ExtResource( 20 )]
+position = Vector2( 64, 128 )
+
+[node name="Mushroom2" parent="Decorations" instance=ExtResource( 20 )]
+position = Vector2( 32, 128 )
+
+[node name="Mushroom3" parent="Decorations" instance=ExtResource( 20 )]
+position = Vector2( 384, 0 )
+
+[node name="Mushroom4" parent="Decorations" instance=ExtResource( 20 )]
+position = Vector2( 832, 96 )
+
+[node name="Mushroom5" parent="Decorations" instance=ExtResource( 20 )]
+position = Vector2( 800, 64 )
+
+[node name="Mushroom6" parent="Decorations" instance=ExtResource( 20 )]
+position = Vector2( 512, 224 )
 
 [node name="Text" type="Node2D" parent="."]
 
