@@ -11,5 +11,5 @@ dest_files=[ "res://.import/darkest-child-by-kevin-macleod.ogg-eba5c72d577743093
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
