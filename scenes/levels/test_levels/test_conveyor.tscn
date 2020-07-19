@@ -24,176 +24,180 @@
 
 [node name="Level" type="Node2D"]
 
-[node name="Player" parent="." instance=ExtResource( 1 )]
-position = Vector2( 128, 160 )
+[node name="Conveyors" type="Node2D" parent="."]
+
+[node name="Conveyor" parent="Conveyors" instance=ExtResource( 8 )]
+position = Vector2( 352, 352 )
+
+[node name="Conveyor2" parent="Conveyors" instance=ExtResource( 8 )]
+position = Vector2( 288, 192 )
+
+[node name="Conveyor3" parent="Conveyors" instance=ExtResource( 7 )]
+position = Vector2( 288, 128 )
+
+[node name="Conveyor4" parent="Conveyors" instance=ExtResource( 7 )]
+position = Vector2( 320, 128 )
+
+[node name="Conveyor5" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 320, 192 )
+
+[node name="Conveyor6" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 352, 192 )
+
+[node name="Conveyor7" parent="Conveyors" instance=ExtResource( 6 )]
+position = Vector2( 352, 160 )
+
+[node name="Conveyor8" parent="Conveyors" instance=ExtResource( 6 )]
+position = Vector2( 352, 128 )
+
+[node name="Conveyor9" parent="Conveyors" instance=ExtResource( 7 )]
+position = Vector2( 288, 288 )
+
+[node name="Conveyor10" parent="Conveyors" instance=ExtResource( 7 )]
+position = Vector2( 320, 288 )
+
+[node name="Conveyor15" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 736, 320 )
+
+[node name="Conveyor16" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 768, 320 )
+
+[node name="Conveyor11" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 704, 320 )
+
+[node name="Conveyor12" parent="Conveyors" instance=ExtResource( 8 )]
+position = Vector2( 288, 160 )
+
+[node name="Conveyor13" parent="Conveyors" instance=ExtResource( 8 )]
+position = Vector2( 352, 320 )
+
+[node name="Conveyor14" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 672, 320 )
+
+[node name="Conveyor17" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 800, 320 )
+
+[node name="Conveyor18" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 832, 320 )
+
+[node name="Conveyor19" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 864, 320 )
+
+[node name="Conveyor20" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 896, 320 )
+
+[node name="Conveyor21" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 928, 320 )
+
+[node name="Conveyor22" parent="Conveyors" instance=ExtResource( 5 )]
+position = Vector2( 544, 192 )
+
+[node name="Conveyor23" parent="Conveyors" instance=ExtResource( 6 )]
+position = Vector2( 512, 192 )
+
+[node name="Conveyor24" parent="Conveyors" instance=ExtResource( 7 )]
+position = Vector2( 512, 224 )
+
+[node name="Conveyor25" parent="Conveyors" instance=ExtResource( 8 )]
+position = Vector2( 544, 224 )
 
 [node name="Cat" parent="." instance=ExtResource( 9 )]
 position = Vector2( 736, 160 )
 
-[node name="Conveyor" parent="." instance=ExtResource( 8 )]
-position = Vector2( 352, 352 )
+[node name="Text" type="Node2D" parent="."]
 
-[node name="Conveyor2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 288, 192 )
+[node name="ButtonA4" parent="Text" instance=ExtResource( 19 )]
+position = Vector2( 512, 192 )
 
-[node name="Conveyor3" parent="." instance=ExtResource( 7 )]
-position = Vector2( 288, 128 )
+[node name="ButtonB3" parent="Text" instance=ExtResource( 20 )]
+position = Vector2( 512, 224 )
 
-[node name="Conveyor4" parent="." instance=ExtResource( 7 )]
-position = Vector2( 320, 128 )
+[node name="ButtonX3" parent="Text" instance=ExtResource( 12 )]
+position = Vector2( 544, 224 )
 
-[node name="Conveyor5" parent="." instance=ExtResource( 5 )]
-position = Vector2( 320, 192 )
+[node name="ButtonY3" parent="Text" instance=ExtResource( 13 )]
+position = Vector2( 544, 192 )
 
-[node name="Conveyor6" parent="." instance=ExtResource( 5 )]
-position = Vector2( 352, 192 )
-
-[node name="Conveyor7" parent="." instance=ExtResource( 6 )]
-position = Vector2( 352, 160 )
-
-[node name="Conveyor8" parent="." instance=ExtResource( 6 )]
-position = Vector2( 352, 128 )
-
-[node name="Conveyor9" parent="." instance=ExtResource( 7 )]
-position = Vector2( 288, 288 )
-
-[node name="Conveyor10" parent="." instance=ExtResource( 7 )]
-position = Vector2( 320, 288 )
-
-[node name="Conveyor15" parent="." instance=ExtResource( 5 )]
-position = Vector2( 736, 320 )
-
-[node name="Conveyor16" parent="." instance=ExtResource( 5 )]
-position = Vector2( 768, 320 )
-
-[node name="Conveyor11" parent="." instance=ExtResource( 5 )]
-position = Vector2( 704, 320 )
-
-[node name="Conveyor12" parent="." instance=ExtResource( 8 )]
-position = Vector2( 288, 160 )
-
-[node name="Conveyor13" parent="." instance=ExtResource( 8 )]
-position = Vector2( 352, 320 )
-
-[node name="Conveyor14" parent="." instance=ExtResource( 5 )]
-position = Vector2( 672, 320 )
-
-[node name="Conveyor17" parent="." instance=ExtResource( 5 )]
-position = Vector2( 800, 320 )
-
-[node name="Conveyor18" parent="." instance=ExtResource( 5 )]
-position = Vector2( 832, 320 )
-
-[node name="Conveyor19" parent="." instance=ExtResource( 5 )]
-position = Vector2( 864, 320 )
-
-[node name="Conveyor20" parent="." instance=ExtResource( 5 )]
-position = Vector2( 896, 320 )
-
-[node name="Conveyor21" parent="." instance=ExtResource( 5 )]
-position = Vector2( 928, 320 )
-
-[node name="ButtonLeft" parent="." instance=ExtResource( 16 )]
+[node name="ButtonLeft" parent="Text" instance=ExtResource( 16 )]
 position = Vector2( 640, 320 )
 
-[node name="Is" parent="." instance=ExtResource( 14 )]
+[node name="Is" parent="Text" instance=ExtResource( 14 )]
 position = Vector2( 896, 320 )
 
-[node name="Die" parent="." instance=ExtResource( 17 )]
+[node name="Die" parent="Text" instance=ExtResource( 17 )]
 position = Vector2( 928, 320 )
 
-[node name="ButtonLeft2" parent="." instance=ExtResource( 16 )]
+[node name="ButtonLeft2" parent="Text" instance=ExtResource( 16 )]
 position = Vector2( 0, 480 )
 
-[node name="ButtonRight" parent="." instance=ExtResource( 11 )]
+[node name="ButtonRight" parent="Text" instance=ExtResource( 11 )]
 position = Vector2( 448, 480 )
 
-[node name="ButtonUp" parent="." instance=ExtResource( 4 )]
+[node name="ButtonUp" parent="Text" instance=ExtResource( 4 )]
 position = Vector2( 288, 480 )
 
-[node name="ButtonDown" parent="." instance=ExtResource( 15 )]
+[node name="ButtonDown" parent="Text" instance=ExtResource( 15 )]
 position = Vector2( 160, 480 )
 
-[node name="Is2" parent="." instance=ExtResource( 14 )]
+[node name="Is2" parent="Text" instance=ExtResource( 14 )]
 position = Vector2( 32, 480 )
 
-[node name="Is3" parent="." instance=ExtResource( 14 )]
+[node name="Is3" parent="Text" instance=ExtResource( 14 )]
 position = Vector2( 192, 480 )
 
-[node name="Is4" parent="." instance=ExtResource( 14 )]
+[node name="Is4" parent="Text" instance=ExtResource( 14 )]
 position = Vector2( 320, 480 )
 
-[node name="Is5" parent="." instance=ExtResource( 14 )]
+[node name="Is5" parent="Text" instance=ExtResource( 14 )]
 position = Vector2( 480, 480 )
 
-[node name="WalkLeft" parent="." instance=ExtResource( 10 )]
+[node name="WalkLeft" parent="Text" instance=ExtResource( 10 )]
 position = Vector2( 64, 480 )
 
-[node name="WalkDown" parent="." instance=ExtResource( 3 )]
+[node name="WalkDown" parent="Text" instance=ExtResource( 3 )]
 position = Vector2( 224, 480 )
 
-[node name="WalkUp" parent="." instance=ExtResource( 2 )]
+[node name="WalkUp" parent="Text" instance=ExtResource( 2 )]
 position = Vector2( 352, 480 )
 
-[node name="WalkRight" parent="." instance=ExtResource( 18 )]
+[node name="WalkRight" parent="Text" instance=ExtResource( 18 )]
 position = Vector2( 512, 480 )
 
-[node name="ButtonA" parent="." instance=ExtResource( 19 )]
+[node name="ButtonA" parent="Text" instance=ExtResource( 19 )]
 position = Vector2( 320, 128 )
 
-[node name="Is6" parent="." instance=ExtResource( 14 )]
+[node name="Is6" parent="Text" instance=ExtResource( 14 )]
 position = Vector2( 160, 256 )
 
-[node name="ButtonA2" parent="." instance=ExtResource( 19 )]
+[node name="ButtonA2" parent="Text" instance=ExtResource( 19 )]
 position = Vector2( 352, 192 )
 
-[node name="ButtonB" parent="." instance=ExtResource( 20 )]
+[node name="ButtonB" parent="Text" instance=ExtResource( 20 )]
 position = Vector2( 288, 128 )
 
-[node name="ButtonX" parent="." instance=ExtResource( 12 )]
+[node name="ButtonX" parent="Text" instance=ExtResource( 12 )]
 position = Vector2( 320, 192 )
 
-[node name="ButtonY" parent="." instance=ExtResource( 13 )]
+[node name="ButtonY" parent="Text" instance=ExtResource( 13 )]
 position = Vector2( 352, 160 )
 
-[node name="ButtonA3" parent="." instance=ExtResource( 19 )]
+[node name="ButtonA3" parent="Text" instance=ExtResource( 19 )]
 position = Vector2( 288, 288 )
 
-[node name="ButtonB2" parent="." instance=ExtResource( 20 )]
+[node name="ButtonB2" parent="Text" instance=ExtResource( 20 )]
 position = Vector2( 320, 288 )
 
-[node name="ButtonX2" parent="." instance=ExtResource( 12 )]
+[node name="ButtonX2" parent="Text" instance=ExtResource( 12 )]
 position = Vector2( 352, 320 )
 
-[node name="ButtonY2" parent="." instance=ExtResource( 13 )]
+[node name="ButtonY2" parent="Text" instance=ExtResource( 13 )]
 position = Vector2( 352, 352 )
-
-[node name="Conveyor22" parent="." instance=ExtResource( 5 )]
-position = Vector2( 544, 192 )
-
-[node name="Conveyor23" parent="." instance=ExtResource( 6 )]
-position = Vector2( 512, 192 )
-
-[node name="Conveyor24" parent="." instance=ExtResource( 7 )]
-position = Vector2( 512, 224 )
-
-[node name="Conveyor25" parent="." instance=ExtResource( 8 )]
-position = Vector2( 544, 224 )
-
-[node name="ButtonA4" parent="." instance=ExtResource( 19 )]
-position = Vector2( 512, 192 )
-
-[node name="ButtonB3" parent="." instance=ExtResource( 20 )]
-position = Vector2( 512, 224 )
-
-[node name="ButtonX3" parent="." instance=ExtResource( 12 )]
-position = Vector2( 544, 224 )
-
-[node name="ButtonY3" parent="." instance=ExtResource( 13 )]
-position = Vector2( 544, 192 )
 
 [node name="Wall" parent="." instance=ExtResource( 21 )]
 position = Vector2( 352, 224 )
 
 [node name="Wall2" parent="." instance=ExtResource( 21 )]
 position = Vector2( 576, 320 )
+
+[node name="Player" parent="." instance=ExtResource( 1 )]
+position = Vector2( 128, 160 )

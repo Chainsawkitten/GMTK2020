@@ -159,11 +159,11 @@ position = Vector2( 704, 320 )
 direction_x = -1
 direction_y = 0
 
-[node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 64, 64 )
-
 [node name="Lava" parent="." instance=ExtResource( 25 )]
 position = Vector2( 704, 128 )
 
 [node name="Trap" parent="." instance=ExtResource( 26 )]
 position = Vector2( 832, 320 )
+
+[node name="Player" parent="." instance=ExtResource( 14 )]
+position = Vector2( 64, 64 )

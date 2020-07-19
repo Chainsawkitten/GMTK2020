@@ -115,15 +115,6 @@ position = Vector2( 352, 352 )
 [node name="Wall9" parent="Walls" instance=ExtResource( 9 )]
 position = Vector2( 352, 384 )
 
-[node name="Door" parent="." instance=ExtResource( 17 )]
-position = Vector2( 288, 224 )
-
-[node name="Cat" parent="." instance=ExtResource( 2 )]
-position = Vector2( 64, 352 )
-
-[node name="Player" parent="." instance=ExtResource( 14 )]
-position = Vector2( 64, 64 )
-
 [node name="Barrier" parent="." instance=ExtResource( 10 )]
 position = Vector2( 160, 384 )
 levels_to_beat = 21
@@ -139,3 +130,12 @@ position = Vector2( 512, 352 )
 
 [node name="Conveyor4" parent="." instance=ExtResource( 21 )]
 position = Vector2( 544, 352 )
+
+[node name="Door" parent="." instance=ExtResource( 17 )]
+position = Vector2( 288, 224 )
+
+[node name="Cat" parent="." instance=ExtResource( 2 )]
+position = Vector2( 64, 352 )
+
+[node name="Player" parent="." instance=ExtResource( 14 )]
+position = Vector2( 64, 64 )

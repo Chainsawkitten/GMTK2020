@@ -237,9 +237,6 @@ position = Vector2( 192, 192 )
 [node name="Cat" parent="." instance=ExtResource( 3 )]
 position = Vector2( 544, 256 )
 
-[node name="Player" parent="." instance=ExtResource( 4 )]
-position = Vector2( 352, 256 )
-
 [node name="Text" type="Node2D" parent="."]
 
 [node name="ButtonRight" parent="Text" instance=ExtResource( 5 )]
@@ -250,3 +247,6 @@ position = Vector2( 448, 128 )
 
 [node name="WalkRight" parent="Text" instance=ExtResource( 2 )]
 position = Vector2( 480, 128 )
+
+[node name="Player" parent="." instance=ExtResource( 4 )]
+position = Vector2( 352, 256 )
