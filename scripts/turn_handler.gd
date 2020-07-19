@@ -61,7 +61,7 @@ func _process(delta):
 						set_pause(not paused)
 		else:
 			if !paused:
-				# Not in the menu, normal gameplay.
+				# Not in the menu or during win transition, normal gameplay.
 				if input == Press.UNDO:
 					if GlobalGridMap.undo():
 						reread_button_actions()
@@ -79,7 +79,7 @@ func _process(delta):
 						WorldObjects.update_world_objects()
 						reread_button_actions()
 						GlobalGridMap.save_state()
-			else:
+			elif menu != null and menu.visible:
 				# In the menu.
 				if input == Press.BUTTON_Y:
 					GlobalGridMap.reset_action()
