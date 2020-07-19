@@ -56,8 +56,9 @@ func _process(delta):
 				# check that the game is not paused for some other reason
 				# such as the win screen
 				if not (paused && not menu.visible):
-					menu.visible = not paused
-					set_pause(not paused)
+					if LevelHandler.current_level.name != "credits":
+						menu.visible = not paused
+						set_pause(not paused)
 		else:
 			if !paused:
 				# Not in the menu, normal gameplay.
