@@ -26,8 +26,9 @@ _global_script_class_icons={
 
 [application]
 
-config/name="GMTK2020"
+config/name="Button Is Pet Cat"
 run/main_scene="res://scenes/game.tscn"
+config/use_custom_user_dir=true
 config/icon="res://icon.png"
 
 [autoload]

@@ -6,9 +6,14 @@ extends GameObject
 # How many levels need to be beaten before the barrier goes away.
 export var levels_to_beat : int = 0
 
+var killed : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _process(_delta):
-	if !TurnHandler.paused:
+	if killed:
+		GlobalGridMap.remove(self)
+		visible = false
+	elif !TurnHandler.paused:
 		if LevelHandler.get_beaten_levels() == levels_to_beat:
 			# Create a poof!
 			var poof = load("scenes/effects/poof.tscn").instance()
@@ -22,4 +27,5 @@ func _process(_delta):
 # Kill the barrier.
 func kill():
 	GlobalGridMap.remove(self)
-	queue_free()
+	visible = false
+	killed = true

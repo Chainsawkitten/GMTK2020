@@ -23,6 +23,13 @@ var current_level : LevelDescription
 # The top level.
 var top_level : LevelDescription
 
+# Save file version number. Increasing this will make previous save files
+# incompatible.
+const save_file_version : int = 1
+
+# Path to the save file.
+const save_file_path : String = "user://save"
+
 func _init():
 	top_level = LevelDescription.new()
 	top_level.name = "over_overworld"
@@ -32,6 +39,8 @@ func _init():
 	create_world2_levels(top_level)
 	
 	current_level = top_level.children[0].children[0]
+	
+	call_deferred("load")
 
 # Create all the levels in the overworld.
 func create_overworld_levels(var parent : LevelDescription):
@@ -124,6 +133,8 @@ func play_level(var level : LevelDescription):
 	current_level = level
 	level.reached = true
 	
+	save()
+	
 	# Load new level.
 	var new_level = load("scenes/levels/" + level.name + ".tscn").instance()
 	game_node.add_child(new_level)
@@ -137,3 +148,57 @@ func get_beaten_levels() -> int:
 		if child.beaten:
 			beaten += 1
 	return beaten
+
+# Save the game.
+func save():
+	var file : File = File.new()
+	file.open(save_file_path, File.WRITE)
+	
+	# Version number.
+	file.store_8(save_file_version)
+	
+	# Level information.
+	save_level(file, top_level)
+	
+	file.close()
+
+# Load saved game.
+func load():
+	var file : File = File.new()
+	if !file.file_exists(save_file_path):
+		return
+	
+	file.open(save_file_path, File.READ)
+	
+	# Version number check.
+	var version_number = file.get_8()
+	if version_number != save_file_version:
+		return
+	
+	# Level information.
+	load_level(file, top_level)
+	
+	# Start from the overworld.
+	return_to_parent()
+	
+	file.close()
+
+# Save the state of a level to file.
+func save_level(var file : File, var level : LevelDescription):
+	# Save level.
+	file.store_8(level.beaten)
+	file.store_8(level.reached)
+	
+	# Save children.
+	for child in level.children:
+		save_level(file, child)
+
+# Load the state of a level from file.
+func load_level(var file : File, var level : LevelDescription):
+	# Load level.
+	level.beaten = file.get_8()
+	level.reached = file.get_8()
+	
+	# Load children.
+	for child in level.children:
+		load_level(file, child)
